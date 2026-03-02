@@ -9,6 +9,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Moment;
 import acme.client.components.validation.Mandatory;
@@ -75,14 +77,36 @@ public class Campaign extends AbstractEntity {
 	@Transient
 	private Double				effort;
 
+	@Transient
+	@Autowired
+	private CampaignRepository	repository;
+
+
+	public Double getMonthsActive() {
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.;
+		long millis = this.endMoment.getTime() - this.startMoment.getTime();
+		double days = millis / (1000.0 * 60.0 * 60.0 * 24.0);
+		return Math.round(days / 30.0) * 1.0;
+	}
+
+	public Double getEffort() {
+		double result;
+		Double wrapper;
+		wrapper = this.repository.sumEffortByCampaignId(this.getId());
+		result = wrapper == null ? 0 : wrapper.doubleValue();
+		return result;
+	}
+
+
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				draftMode;
+	private Boolean			draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Spokesperson		spokesperson;
+	private Spokesperson	spokesperson;
 
 }

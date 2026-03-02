@@ -1,6 +1,9 @@
 
 package acme.entities.campaigns;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -17,8 +20,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidCampaign;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
@@ -69,29 +72,18 @@ public class Campaign extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
-	@Mandatory
-	@Valid
-	@Transient
-	private Double				monthsActive;
-
-	@Mandatory
-	@ValidNumber(min = 1)
-	@Transient
-	private Double				effort;
-
 	@Transient
 	@Autowired
 	private CampaignRepository	repository;
 
 
+	@Transient
 	public Double getMonthsActive() {
-		if (this.startMoment == null || this.endMoment == null)
-			return 0.;
-		long millis = this.endMoment.getTime() - this.startMoment.getTime();
-		double days = millis / (1000.0 * 60.0 * 60.0 * 24.0);
-		return Math.round(days / 30.0) * 1.0;
+		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+		return duration.get(ChronoUnit.MONTHS) * 1.0;
 	}
 
+	@Transient
 	public Double getEffort() {
 		double result;
 		Double wrapper;
@@ -108,7 +100,7 @@ public class Campaign extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Spokesperson	spokesperson;
 
 }

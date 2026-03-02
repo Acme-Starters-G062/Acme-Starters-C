@@ -2,6 +2,7 @@
 package acme.entities.milestones;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -11,7 +12,12 @@ import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.entities.campaigns.Campaign;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Milestone extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -27,7 +33,7 @@ public class Milestone extends AbstractEntity {
 	private String				achievements;
 
 	@Mandatory
-	@ValidNumber(min = 1)
+	@ValidNumber(min = 0.01)
 	@Column
 	private Double				effort;
 
@@ -38,6 +44,6 @@ public class Milestone extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Campaign			campaign;
 }

@@ -49,7 +49,7 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 			}
 			{
 				boolean hasMilestones;
-				hasMilestones = campaign.getDraftMode() || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != 0;
+				hasMilestones = campaign.getDraftMode() || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != null;
 				super.state(context, hasMilestones, "draftMode", "acme.validation.campaign.no-milestones.message");
 			}
 			{
@@ -58,12 +58,11 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 				if (!isDraft && campaign.getStartMoment() != null && campaign.getEndMoment() != null) {
 					Date now = MomentHelper.getCurrentMoment();
 					boolean futureStart = MomentHelper.isAfter(campaign.getStartMoment(), now);
-					boolean futureEnd = MomentHelper.isAfter(campaign.getEndMoment(), now);
 					boolean orderedMoments = MomentHelper.isAfter(campaign.getEndMoment(), campaign.getStartMoment());
 
-					correctInterval = futureStart && futureEnd && orderedMoments;
+					correctInterval = futureStart && orderedMoments;
 
-					super.state(context, correctInterval, "endMoment", "acme.validation.campaign.invalid-interval.message");
+					super.state(context, correctInterval, "endMoment", "acme.validation.campaign.invalid-date-interval.message");
 				}
 			}
 			result = !super.hasErrors(context);

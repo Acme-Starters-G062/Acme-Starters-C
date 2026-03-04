@@ -9,6 +9,9 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidMoney;
+import acme.constraints.ValidHeader;
+import acme.constraints.ValidText;
 import acme.entities.sponsorships.SponsorShip;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,17 +29,17 @@ public class Donation extends AbstractEntity {
 
 	@Mandatory
 	@Column
-	//@ValidHeader
+	@ValidHeader
 	private String				name;
 
 	@Mandatory
 	@Column
-	//@ValidText
+	@ValidText
 	private String				notes;
 
 	@Mandatory
 	@Column
-	//@ValidMoney(positive)
+	@ValidMoney(min = 0.1)
 	private Money				money;
 
 	@Mandatory
@@ -49,7 +52,7 @@ public class Donation extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@Valid
 	private SponsorShip			sponsorship;
 }

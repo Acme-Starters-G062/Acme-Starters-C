@@ -14,7 +14,7 @@ import acme.entities.part.Part;
 @Repository
 public interface InventionRepository extends AbstractRepository {
 
-	@Query("select sum(p.cost) from Part p where p.invention.id = :inventionId and p.cost.currency = 'EUR'")
+	@Query("select sum(p.cost.amount) from Part p where p.invention.id = :inventionId and p.cost.currency = 'EUR'")
 	Money sumCostByInventionId(@Param("inventionId") Integer inventionId);
 
 	Invention findInventionByTicker(String ticker);

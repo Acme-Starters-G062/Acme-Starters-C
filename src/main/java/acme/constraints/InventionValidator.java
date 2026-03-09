@@ -1,8 +1,6 @@
 
 package acme.constraints;
 
-import java.util.Date;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,16 +44,14 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 			{
 				boolean correctNumPart;
 
-				correctNumPart = this.repository.sumPartByInventionId(invention.getId()) > 0;
+				correctNumPart = this.repository.sumPartByInventionId(invention.getId()) > 0 && invention.getDraftMode().equals(false);
 
 				super.state(context, correctNumPart, "parts", "acme.validation.invention.min-num-parts.message");
 			}
 			{
 				boolean endIsAfterStart;
 
-				Date now = MomentHelper.getCurrentMoment();
-				endIsAfterStart = MomentHelper.isAfter(invention.getStartMoment(), invention.getEndMoment()) && MomentHelper.isAfter(now, invention.getStartMoment());
-				;
+				endIsAfterStart = MomentHelper.isAfter(invention.getStartMoment(), invention.getEndMoment()) && invention.getDraftMode().equals(false);
 
 				super.state(context, endIsAfterStart, "correctDate", "acme.validation.invention.correctDate.message");
 			}

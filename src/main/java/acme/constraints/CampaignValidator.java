@@ -1,8 +1,6 @@
 
 package acme.constraints;
 
-import java.util.Date;
-
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,18 +47,16 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 			}
 			{
 				boolean hasMilestones;
-				hasMilestones = campaign.getDraftMode() || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != null;
+				hasMilestones = campaign.getDraftMode() || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != null && this.repository.findCountMilestonesByCampaignId(campaign.getId()) > 0;
 				super.state(context, hasMilestones, "draftMode", "acme.validation.campaign.no-milestones.message");
 			}
 			{
 				boolean correctInterval;
 				boolean isDraft = campaign.getDraftMode();
 				if (!isDraft && campaign.getStartMoment() != null && campaign.getEndMoment() != null) {
-					Date now = MomentHelper.getCurrentMoment();
-					boolean futureStart = MomentHelper.isAfter(campaign.getStartMoment(), now);
 					boolean orderedMoments = MomentHelper.isAfter(campaign.getEndMoment(), campaign.getStartMoment());
 
-					correctInterval = futureStart && orderedMoments;
+					correctInterval = orderedMoments;
 
 					super.state(context, correctInterval, "endMoment", "acme.validation.campaign.invalid-date-interval.message");
 				}

@@ -1,2 +1,3 @@
 key,enabled,identity,password,username
 user-account-sponsor-1,false,"UserIdentity{name:'' , surname:'' , email:'' }",,
+user-account-spokesperson-01,false,"UserIdentity{name: '', surname: '', email: ''}","",""

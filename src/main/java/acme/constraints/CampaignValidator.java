@@ -47,12 +47,12 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 			}
 			{
 				boolean hasMilestones;
-				hasMilestones = campaign.getDraftMode() || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != null && this.repository.findCountMilestonesByCampaignId(campaign.getId()) > 0;
+				hasMilestones = Boolean.TRUE.equals(campaign.getDraftMode()) || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != null && this.repository.findCountMilestonesByCampaignId(campaign.getId()) > 0;
 				super.state(context, hasMilestones, "draftMode", "acme.validation.campaign.no-milestones.message");
 			}
 			{
 				boolean correctInterval;
-				boolean isDraft = campaign.getDraftMode();
+				boolean isDraft = Boolean.TRUE.equals(campaign.getDraftMode());
 				if (!isDraft && campaign.getStartMoment() != null && campaign.getEndMoment() != null) {
 					boolean orderedMoments = MomentHelper.isAfter(campaign.getEndMoment(), campaign.getStartMoment());
 

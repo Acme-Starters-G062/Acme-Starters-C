@@ -37,13 +37,22 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 		if (auditReport == null)
 			result = true;
 		else {
+			if (auditReport.getTicker() != null) {
+				AuditReport existing = this.repository.findByTicker(auditReport.getTicker());
+
+				boolean uniqueTicker = existing == null || existing.getId() == auditReport.getId();
+
+				super.state(context, uniqueTicker, "ticker", "acme.validation.audit-report.ticker.unique.message");
+			}
+
 			{
 				boolean publishedWithAuditSection;
 
-				publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
+				publishedWithAuditSection = auditReport.getDraftMode() || !this.repository.getAuditSections(auditReport.getId()).isEmpty();
 
-				super.state(context, publishedWithAuditSection, "*", "acme.validation.audit-report.published-without-audit-section.message");
+				super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.audit-report.published-without-audit-section.message");
 			}
+
 			{
 				boolean startBeforeEnd;
 
@@ -51,6 +60,7 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 				super.state(context, startBeforeEnd, "endMoment", "acme.validation.audit-report.start-before-end.message");
 			}
+
 			result = !super.hasErrors(context);
 		}
 

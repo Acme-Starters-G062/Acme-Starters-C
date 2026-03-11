@@ -1,27 +1,4 @@
 key,firm,highlights,solicitor,key:userAccount
-#base realm
-auditor-00,L,L,FALSE,user-account-auditor-00
-#firm
-auditor-01,Lorem ipsum dolor sit amet  consectetu,L,FALSE,user-account-auditor-01
-auditor-02,Lo,L,FALSE,user-account-auditor-02
-auditor-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,L,FALSE,user-account-auditor-03
-auditor-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,L,FALSE,user-account-auditor-04
-auditor-05,โลเร็ม อิปซัม,L,FALSE,user-account-auditor-05
-auditor-06,لوريم إيبسوم,L,FALSE,user-account-auditor-06
-auditor-07,洛伦·伊普森,L,FALSE,user-account-auditor-07
-auditor-08,<marquee>Hacked</marquee>,L,FALSE,user-account-auditor-08
-auditor-09,<script>alert(‘Hacked!’);</script>,L,FALSE,user-account-auditor-09
-auditor-10,' or 'A' = 'A,L,FALSE,user-account-auditor-10
-#highlights
-auditor-11,L,Lorem ipsum dolor sit amet  consectetu,FALSE,user-account-auditor-11
-auditor-12,L,Lo,FALSE,user-account-auditor-12
-auditor-13,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,FALSE,user-account-auditor-13
-auditor-14,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,FALSE,user-account-auditor-14
-auditor-15,L,โลเร็ม อิปซัม,FALSE,user-account-auditor-15
-auditor-16,L,لوريم إيبسوم,FALSE,user-account-auditor-16
-auditor-17,L,洛伦·伊普森,FALSE,user-account-auditor-17
-auditor-18,L,<marquee>Hacked</marquee>,FALSE,user-account-auditor-18
-auditor-19,L,<script>alert(‘Hacked!’);</script>,FALSE,user-account-auditor-19
-auditor-20,L,' or 'A' = 'A,FALSE,user-account-auditor-20
-#solicitor
-auditor-21,L,L,TRUE,user-account-auditor-21
+auditor-01,L,L,FALSE,user-account-auditor-01
+auditor-02,Lorem ipsum dolor sit amet  consectetu,L,FALSE,user-account-auditor-02
+auditor-03,L,Lo,FALSE,user-account-auditor-03

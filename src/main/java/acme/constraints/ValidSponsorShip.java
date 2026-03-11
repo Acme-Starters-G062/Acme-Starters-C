@@ -11,7 +11,7 @@ import javax.validation.Payload;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = SponsorShipValidator.class)
+@Constraint(validatedBy = SponsorshipValidator.class)
 
 public @interface ValidSponsorShip {
 

@@ -2,7 +2,7 @@
 package acme.entities.sponsorships;
 
 import java.time.Duration;
-import java.util.List;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,19 +15,15 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Moment;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidSponsorShip;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
-import acme.entities.donations.Donation;
 import acme.realms.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +32,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @ValidSponsorShip
-public class SponsorShip extends AbstractEntity {
+public class Sponsorship extends AbstractEntity {
 
 	// Serialisation version ---------------------------------------------
 
@@ -46,7 +42,7 @@ public class SponsorShip extends AbstractEntity {
 
 	@Autowired
 	@Transient
-	private SponsorShipRepository	sponsorShipRepository;
+	private SponsorshipRepository	sponsorShipRepository;
 
 	@Mandatory
 	@Column(unique = true)
@@ -65,13 +61,13 @@ public class SponsorShip extends AbstractEntity {
 
 	@Mandatory
 	@Temporal(TemporalType.TIMESTAMP)
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	private Moment					startMoment;
+	@ValidMoment
+	private Date					startMoment;
 
 	@Mandatory
 	@Temporal(TemporalType.TIMESTAMP)
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	private Moment					endMoment;
+	@ValidMoment
+	private Date					endMoment;
 
 	@Optional
 	@Column
@@ -83,19 +79,10 @@ public class SponsorShip extends AbstractEntity {
 	@Valid
 	private Boolean					draftMode;
 
-	@Valid
-	@Transient
-	@Mandatory
-	private Double					monthsActive;
-
-	@ValidMoney(min = 0.1)
-	@Mandatory
-	@Transient
-	private Money					totalMoney;
-
 	// Derived attributes -----------------------------------------------------
 
 
+	@Transient
 	public Double getMonthsActive() {
 		Duration duration = Duration.between(this.startMoment.toInstant(), this.endMoment.toInstant());
 		Long days = duration.toDays();
@@ -103,14 +90,9 @@ public class SponsorShip extends AbstractEntity {
 		return Math.round(months) * 1.0;
 	}
 
+	@Transient
 	public Money getTotalMoney() {
-		List<Donation> donations = this.sponsorShipRepository.findDonationsBySponsorShipId(this.getId());
-
-		Money total = new Money();
-		total.setCurrency("EUR");
-		total.setAmount(donations.stream().filter(d -> "EUR".equals(d.getMoney().getCurrency())).mapToDouble(d -> d.getMoney().getAmount()).sum());
-
-		return total;
+		return this.sponsorShipRepository.sumMoneyDonation(this.getId());
 	}
 
 	// Relationships ----------------------------------------------------------

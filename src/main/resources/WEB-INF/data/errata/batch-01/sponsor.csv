@@ -1,0 +1,11 @@
+key,key:userAccount,address,im,gold
+#key
+sponsor-1,,Calle calle de la calle,Paquirri,FALSE
+#address
+sponsor-2,user-account-sponsor-1,,Paquirri,FALSE
+sponsor-3,user-account-sponsor-1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",Paquirri,FALSE
+#im
+sponsor-4,user-account-sponsor-1,Calle calle de la calle,,FALSE
+sponsor-5,user-account-sponsor-1,Calle calle de la calle,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",FALSE
+#gold
+sponsor-6,user-account-sponsor-1,Calle calle de la calle,Paquirri,

@@ -12,7 +12,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoney;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
-import acme.entities.sponsorships.SponsorShip;
+import acme.entities.sponsorships.Sponsorship;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,7 +39,7 @@ public class Donation extends AbstractEntity {
 
 	@Mandatory
 	@Column
-	@ValidMoney(min = 0.1)
+	@ValidMoney(min = 0.01)
 	private Money				money;
 
 	@Mandatory
@@ -54,5 +54,5 @@ public class Donation extends AbstractEntity {
 	@Mandatory
 	@ManyToOne(optional = false)
 	@Valid
-	private SponsorShip			sponsorship;
+	private Sponsorship			sponsorship;
 }

@@ -11,14 +11,14 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.donations.Donation;
 
 @Repository
-public interface SponsorShipRepository extends AbstractRepository {
+public interface SponsorshipRepository extends AbstractRepository {
 
-	@Query("SELECT SUM(d.money) FROM Donation d WHERE d.sponsorship.id = :sponsorshipId")
+	@Query("SELECT SUM(d.money.amount) FROM Donation d WHERE d.sponsorship.id = :sponsorshipId")
 	Money sumMoneyDonation(int sponsorshipId);
 
-	SponsorShip findSponsorShipByTicker(String ticker);
+	Sponsorship findSponsorShipByTicker(String ticker);
 
-	@Query("SELECT COUNT(d) FROM Donation d WHERE d.sponsorShip.id = :sponsorshipId")
+	@Query("SELECT COUNT(d) FROM Donation d WHERE d.sponsorship.id = :sponsorshipId")
 	long countDonationsBySponsorShipId(int sponsorshipId);
 
 	@Query("SELECT d FROM Donation d WHERE d.sponsorship.id = :sponsorshipId")

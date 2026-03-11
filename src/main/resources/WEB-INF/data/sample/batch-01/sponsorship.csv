@@ -1,0 +1,63 @@
+﻿key,ticker,name,description,startMoment,endMoment,more-info,draft-mode,key:sponsor
+#base entity
+sponsorship-00,AA00-TICKER,Lorem ipsum dolor sit amet consectetu,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+#ticker
+sponsorship-01,AB01-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-02,ZZ99-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-03,BC03-tiC_kEr,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-04,CB04-_____,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-05,AA05-__________,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+#name
+sponsorship-06,AA06-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-07,AA07-TICKER,Lo,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-08,AA08-TICKER,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-09,AA09-TICKER,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-10,AA10-TICKER,โลเร็ม อิปซัม,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-11,AA11-TICKER,لوريم إيبسوم,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-12,AA12-TICKER,洛伦·伊普森,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-13,AA13-TICKER,<marquee>Hacked</marquee>,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-14,AA14-TICKER,<script>alert(‘Hacked!’);</script>,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-15,AA15-TICKER,' or 'A' = 'A,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+#description
+sponsorship-16,AA16-TICKER,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-17,AA17-TICKER,L,Lo,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-18,AA18-TICKER,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-19,AA19-TICKER,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-20,AA20-TICKER,L,โลเร็ม อิปซัม,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-21,AA21-TICKER,L,لوريم إيبسوم,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-22,AA22-TICKER,L,洛伦·伊普森,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-23,AA23-TICKER,L,<marquee>Hacked</marquee>,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-24,AA24-TICKER,L,<script>alert(‘Hacked!’);</script>,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-25,AA25-TICKER,L,' or 'A' = 'A,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+#startMoment
+sponsorship-26,AA26-TICKER,L,L,2000/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-27,AA27-TICKER,L,L,2000/01/01 00:01,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-28,AA28-TICKER,L,L,2200/12/31 23:59,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-29,AA29-TICKER,L,L,2200/12/31 23:58,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,sponsor-1
+#endMoment
+sponsorship-30,AA30-TICKER,L,L,2000/01/01 00:00,2000/01/01 00:00,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-31,AA31-TICKER,L,L,2000/01/01 00:00,2000/01/01 00:01,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-32,AA32-TICKER,L,L,2026/01/01 00:00,2200/12/31 23:59,http://lorem.com/ipsum,TRUE,sponsor-1
+sponsorship-33,AA33-TICKER,L,L,2200/12/31 23:59,2200/12/31 23:58,http://lorem.com/ipsum,TRUE,sponsor-1
+#moreInfo
+sponsorship-34,AA34-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://a.b,TRUE,sponsor-1
+sponsorship-35,AA35-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",TRUE,sponsor-1
+sponsorship-36,AA36-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",TRUE,sponsor-1
+sponsorship-37,AA37-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://www.lorem-ipsum.org,TRUE,sponsor-1
+sponsorship-38,AA38-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,https://www.lorem-ipsum.org,TRUE,sponsor-1
+sponsorship-39,AA39-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://www.lorem-ipsum.org/dolor/sit.html,TRUE,sponsor-1
+sponsorship-40,AA40-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://www.lorem-ipsum.org/dolor/sit.html#dolor,TRUE,sponsor-1
+sponsorship-41,AA41-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org?a=1&b=2,TRUE,sponsor-1
+sponsorship-42,AA42-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org?,TRUE,sponsor-1
+sponsorship-43,AA43-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org?a,TRUE,sponsor-1
+sponsorship-44,AA44-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org?a&b,TRUE,sponsor-1
+sponsorship-45,AA45-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org/,TRUE,sponsor-1
+sponsorship-46,AA46-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org/a,TRUE,sponsor-1
+sponsorship-47,AA47-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org/a/b,TRUE,sponsor-1
+sponsorship-48,AA48-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org/a/b?,TRUE,sponsor-1
+sponsorship-49,AA49-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org/a/b?a&b,TRUE,sponsor-1
+#draftMode
+sponsorship-50,AA50-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,FALSE,sponsor-1
+#sponsor
+sponsorship-51,AA51-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,sponsor-2
+

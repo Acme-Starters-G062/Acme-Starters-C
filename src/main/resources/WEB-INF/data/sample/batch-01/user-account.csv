@@ -20,3 +20,8 @@ user-account-sponsor-3,true,"UserIdentity{name: 'Gustavo', surname: 'Delgado', e
 user-account-spokesperson-01,true,"UserIdentity{name: 'Sergio', surname: 'Ramos', email: 'sergio@acme.com'}",spokesperson1,spokesperson1
 user-account-spokesperson-02,true,"UserIdentity{name: 'Cristiano', surname: 'Ronaldo', email: 'cristiano@acme.com'}",spokesperson2,spokesperson2
 user-account-spokesperson-03,true,"UserIdentity{name: 'Iker', surname: 'Casillas', email: 'iker@acme.com'}",spokesperson3,spokesperson3
+
+#inventor
+user-account-inventor-01,true,"UserIdentity{name: 'Cristian', surname: 'Inventor', email: 'cristian@acme.com'}",inventor1,inventor1
+user-account-inventor-02,true,"UserIdentity{name: 'Elena', surname: 'โลเร็ม อิปซัม ιπσθμ', email: 'elena@acme.com'}",inventor2,inventor2
+user-account-inventor-03,true,"UserIdentity{name: 'Marta', surname: 'لوريم إيبسوم', email: 'marta@acme.com'}",inventor3,inventor3

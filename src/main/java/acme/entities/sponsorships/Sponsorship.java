@@ -1,7 +1,7 @@
 
 package acme.entities.sponsorships;
 
-import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,6 +20,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidSponsorShip;
 import acme.constraints.ValidText;
@@ -45,18 +46,18 @@ public class Sponsorship extends AbstractEntity {
 	private SponsorshipRepository	sponsorShipRepository;
 
 	@Mandatory
-	@Column(unique = true)
 	@ValidTicker
+	@Column(unique = true)
 	private String					ticker;
 
 	@Mandatory
-	@Column
 	@ValidHeader
+	@Column
 	private String					name;
 
 	@Mandatory
-	@Column
 	@ValidText
+	@Column
 	private String					description;
 
 	@Mandatory
@@ -70,29 +71,37 @@ public class Sponsorship extends AbstractEntity {
 	private Date					endMoment;
 
 	@Optional
-	@Column
 	@ValidUrl
+	@Column
 	private String					moreInfo;
 
 	@Mandatory
-	@Column
 	@Valid
+	@Column
 	private Boolean					draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
 
+	@Mandatory
+	@Valid
 	@Transient
 	public Double getMonthsActive() {
-		Duration duration = Duration.between(this.startMoment.toInstant(), this.endMoment.toInstant());
-		Long days = duration.toDays();
-		Double months = days / 30.0;
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0;
+		Double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 		return Math.round(months) * 1.0;
 	}
 
+	@Mandatory
+	//@ValidMoney(min = 0.01)
 	@Transient
 	public Money getTotalMoney() {
-		return this.sponsorShipRepository.sumMoneyDonation(this.getId());
+		Money total = new Money();
+		total.setCurrency("EUR");
+		Double amount = this.sponsorShipRepository.sumMoneyDonation(this.getId());
+		total.setAmount(amount != null ? amount : 0.0);
+		return total;
 	}
 
 	// Relationships ----------------------------------------------------------

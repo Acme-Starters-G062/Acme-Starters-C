@@ -10,12 +10,12 @@
 
 master.company.title = La empresa
 master.company.text = \
-	Acme Starters, Inc. es una empresa ficticia especializada en ayudar a emprendedores a \
+	Acme Starters, SA. es una empresa ficticia especializada en ayudar a emprendedores a \
 	dar difusión a sus ideas. El objetivo de este proyecto es desarrollar un sistema de \
 	información web que ayude a esta empresa a gestionar su negocio. Los requisitos descritos \
 	en este documento son requisitos fundamentales que deben cumplirse obligatoriamente para \
 	que el entregable sea aceptado.
-master.company.name = Acme, Inc.
+master.company.name = Acme Starters, SA.
 master.company.address = 01 Acme Drive, Wondercity, Wonderland
 master.company.phone = +1 000 111 222
 master.company.email = contact@acme.com

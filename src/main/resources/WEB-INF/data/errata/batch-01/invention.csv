@@ -1,25 +1,23 @@
-key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key: inventor
-# ticker - no singular values
-invention-51,TICKER-51,"","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-# name - no singular values
-invention-52,AA52-TICKER,"","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-53,AA53-TICKER,"","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-54,AA54-TICKER,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-# description - no singular values
-invention-55,AA55-TICKER,invention,"",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-56,AA56-TICKER,invention,"",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-57,AA57-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-# startMoment -  o singular values
-invention-58,AA58-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-59,AA59-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",31/12/1999 23:59,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-60,AA60-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",01/01/2025 0:01,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-# endMoment - no singular values
-invention-61,AA61-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,,http://lorem.com/ipsum,TRUE,inventor-01
-invention-62,AA62-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,31/12/1999 23:59,http://lorem.com/ipsum,TRUE,inventor-01
-invention-63,AA63-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,01/01/2025 0:01,http://lorem.com/ipsum,TRUE,inventor-01
-# moreInfo - no singular values
-invention-64,AA64-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://,TRUE,inventor-01
-invention-65,AA65-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,ftp://,TRUE,inventor-01
-invention-66,AA66-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://a,TRUE,inventor-01
-invention-67,AA67-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,ftp://a,TRUE,inventor-01
-invention-68,AA68-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",TRUE,inventor-01
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:inventor
+# ticker - standard variations
+invention-00,TICKER-00,"","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+# name - standard variations
+invention-01,AA01-TICKER,"","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-02,AA02-TICKER,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem","Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+# description - standard variations
+invention-03,AA03-TICKER,invention,"",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-04,AA04-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+# startMoment - standard variations
+invention-05,AA05-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-06,AA06-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",1999/12/31 23:59,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-07,AA07-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/01/01 0:01,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+# endMoment - standard variations
+invention-08,AA08-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,,http://lorem.com/ipsum,TRUE,inventor-01
+invention-09,AA09-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,1999/12/31 23:59,http://lorem.com/ipsum,TRUE,inventor-01
+invention-10,AA10-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/01/01 0:01,http://lorem.com/ipsum,TRUE,inventor-01
+# moreInfo - standard variations
+invention-11,AA11-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://,TRUE,inventor-01
+invention-12,AA12-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,ftp://,TRUE,inventor-01
+invention-13,AA13-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://a,TRUE,inventor-01
+invention-14,AA14-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,ftp://a,TRUE,inventor-01
+invention-15,AA15-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",TRUE,inventor-01

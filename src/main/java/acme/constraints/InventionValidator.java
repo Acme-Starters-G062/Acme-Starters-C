@@ -44,16 +44,18 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 			{
 				boolean correctNumPart;
 
-				correctNumPart = this.repository.sumPartByInventionId(invention.getId()) > 0 && invention.getDraftMode().equals(false);
+				correctNumPart = Boolean.TRUE.equals(invention.getDraftMode()) || this.repository.sumPartByInventionId(invention.getId()) != null && this.repository.sumPartByInventionId(invention.getId()) > 0;
 
 				super.state(context, correctNumPart, "parts", "acme.validation.invention.min-num-parts.message");
 			}
 			{
 				boolean endIsAfterStart;
-
-				endIsAfterStart = MomentHelper.isAfter(invention.getStartMoment(), invention.getEndMoment()) && invention.getDraftMode().equals(false);
-
-				super.state(context, endIsAfterStart, "correctDate", "acme.validation.invention.correctDate.message");
+				boolean isDraft = Boolean.TRUE.equals(invention.getDraftMode());
+				if (!isDraft && invention.getStartMoment() != null && invention.getEndMoment() != null) {
+					boolean orderedMoments = MomentHelper.isAfter(invention.getEndMoment(), invention.getStartMoment());
+					endIsAfterStart = orderedMoments;
+					super.state(context, endIsAfterStart, "correctDate", "acme.validation.invention.correctDate.message");
+				}
 			}
 			{
 				boolean eurCurrency;

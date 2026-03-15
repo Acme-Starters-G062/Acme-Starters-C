@@ -44,21 +44,21 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorShip, Sp
 
 				oneDonationAtLeast = Boolean.TRUE.equals(sponsorShip.getDraftMode()) || this.repository.countDonationsBySponsorShipId(sponsorShip.getId()) >= 1;
 
-				super.state(context, oneDonationAtLeast, "donations", "acme.validation.sponsorShip.one-donation.message");
+				super.state(context, oneDonationAtLeast, "*", "acme.validation.sponsorShip.one-donation.message");
 			}
 			{
 				boolean futureInterval;
 
 				futureInterval = Boolean.TRUE.equals(sponsorShip.getDraftMode()) || sponsorShip.getEndMoment().compareTo(sponsorShip.getStartMoment()) > 0;
 
-				super.state(context, futureInterval, "moments", "acme.validation.sponsorShip.future-interval.message");
+				super.state(context, futureInterval, "*", "acme.validation.sponsorShip.future-interval.message");
 			}
 			{
 				boolean eurCurrency;
 
 				eurCurrency = Boolean.TRUE.equals(sponsorShip.getDraftMode()) || this.repository.findDonationsBySponsorShipId(sponsorShip.getId()).stream().allMatch(d -> "EUR".equals(d.getMoney().getCurrency()));
 
-				super.state(context, eurCurrency, "money.currency", "acme.validation.sponsorShip.eur-currency.message");
+				super.state(context, eurCurrency, "*", "acme.validation.sponsorShip.eur-currency.message");
 			}
 			result = !super.hasErrors(context);
 		}

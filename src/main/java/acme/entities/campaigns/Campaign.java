@@ -1,7 +1,6 @@
 
 package acme.entities.campaigns;
 
-import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -19,6 +18,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidCampaign;
@@ -76,19 +76,23 @@ public class Campaign extends AbstractEntity {
 	private CampaignRepository	repository;
 
 
+	@Mandatory
+	@Valid
 	@Transient
 	public Double getMonthsActive() {
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		return duration.get(ChronoUnit.MONTHS) * 1.0;
+		if (this.startMoment == null || this.endMoment == null)
+			return 0.0;
+		return MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 	}
 
+	@Mandatory
+	@ValidNumber(min = 0.00)
 	@Transient
 	public Double getEffort() {
-		double result;
-		Double wrapper;
-		wrapper = this.repository.sumEffortByCampaignId(this.getId());
-		result = wrapper == null ? 0 : wrapper.doubleValue();
-		return result;
+		if (this.getId() == 0)
+			return 0.0;
+		Double wrapper = this.repository.sumEffortByCampaignId(this.getId());
+		return wrapper == null ? 0.0 : wrapper;
 	}
 
 

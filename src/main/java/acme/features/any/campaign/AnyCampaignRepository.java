@@ -15,4 +15,7 @@ public interface AnyCampaignRepository extends AbstractRepository {
 	@Query("select c from Campaign c where c.draftMode = false")
 	Collection<Campaign> findCampaignsPublished();
 
+	@Query("select c from Campaign c where c.id = :id")
+	Campaign findCampaignById(int id);
+
 }

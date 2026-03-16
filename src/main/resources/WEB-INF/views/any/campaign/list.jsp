@@ -4,11 +4,11 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="any.campaign.list.label.ticker" path="ticker" width="15%"/>
-	<acme:list-column code="any.campaign.list.label.name" path="name" width="15%"/>
-	<acme:list-column code="any.campaign.list.label.description" path="description" width="40%"/>
-	<acme:list-column code="any.campaign.list.label.startMoment" path="startMoment" width="15%"/>
-	<acme:list-column code="any.campaign.list.label.endMoment" path="endMoment" width="15%"/>
+	<acme:list-column code="any.campaign.list.label.ticker" path="ticker" width="20%"/>
+	<acme:list-column code="any.campaign.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="any.campaign.list.label.description" path="description" width="60%"/>
+	<acme:list-hidden path="startMoment"/>
+	<acme:list-hidden path="endMoment"/>
 	<acme:list-hidden path="moreInfo"/>
 	<acme:list-hidden path="spokesperson.identity.fullName"/>
 </acme:list>

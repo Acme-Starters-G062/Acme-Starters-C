@@ -1,5 +1,5 @@
 
-package acme.features.any.campaign;
+package acme.features.any.milestone;
 
 import javax.annotation.PostConstruct;
 
@@ -8,17 +8,17 @@ import org.springframework.stereotype.Controller;
 
 import acme.client.components.principals.Any;
 import acme.client.controllers.AbstractController;
-import acme.entities.campaigns.Campaign;
+import acme.entities.milestones.Milestone;
 
 @Controller
-public class AnyCampaignController extends AbstractController<Any, Campaign> {
+public class AnyMilestoneController extends AbstractController<Any, Milestone> {
 
 	@PostConstruct
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AnyCampaignListService.class);
-		super.addBasicCommand("show", AnyCampaignShowService.class);
+		super.addBasicCommand("list", AnyMilestoneListService.class);
+		super.addBasicCommand("show", AnyMilestoneShowService.class);
 	}
 
 }

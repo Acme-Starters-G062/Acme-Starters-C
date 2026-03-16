@@ -1,0 +1,7 @@
+any.campaign.list.title = Listado de campañas
+
+any.campaign.list.label.ticker = Referencia 
+any.campaign.list.label.name = Nombre
+any.campaign.list.label.description = Descripción
+any.campaign.list.label.startMoment = Momento inicio
+any.campaign.list.label.endMoment = Momento fin

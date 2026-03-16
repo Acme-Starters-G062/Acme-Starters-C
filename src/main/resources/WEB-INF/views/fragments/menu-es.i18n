@@ -11,7 +11,12 @@
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.list-campaigns = Ver campañas
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.list-campaigns = Ver campañas
 
 # master.menu.administrator ###################################################
 

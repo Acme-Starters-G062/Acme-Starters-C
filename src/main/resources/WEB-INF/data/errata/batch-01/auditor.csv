@@ -1,0 +1,11 @@
+key,firm,highlights,solicitor,key:user-account
+#firm
+auditor-01,null,L,true,user-account-auditor-01
+auditor-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",L,true,user-account-auditor-01
+#highlights
+auditor-03,L,null,true,user-account-auditor-01
+auditor-04,L,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",true,user-account-auditor-01
+#solicitor
+auditor-05,L,L,,user-account-auditor-01
+#user-account
+auditor-06,L,L,true,""

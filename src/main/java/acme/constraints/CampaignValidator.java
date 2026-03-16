@@ -48,7 +48,7 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 			{
 				boolean hasMilestones;
 				hasMilestones = Boolean.TRUE.equals(campaign.getDraftMode()) || this.repository.findCountMilestonesByCampaignId(campaign.getId()) != null && this.repository.findCountMilestonesByCampaignId(campaign.getId()) > 0;
-				super.state(context, hasMilestones, "draftMode", "acme.validation.campaign.no-milestones.message");
+				super.state(context, hasMilestones, "*", "acme.validation.campaign.no-milestones.message");
 			}
 			{
 				boolean correctInterval;
@@ -58,7 +58,7 @@ public class CampaignValidator extends AbstractValidator<ValidCampaign, Campaign
 
 					correctInterval = orderedMoments;
 
-					super.state(context, correctInterval, "endMoment", "acme.validation.campaign.invalid-date-interval.message");
+					super.state(context, correctInterval, "*", "acme.validation.campaign.invalid-date-interval.message");
 				}
 			}
 			result = !super.hasErrors(context);

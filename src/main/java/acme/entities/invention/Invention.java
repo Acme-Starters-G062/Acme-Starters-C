@@ -1,7 +1,7 @@
 
-package acme.entities.campaigns;
+package acme.entities.invention;
 
-import java.time.temporal.ChronoUnit;
+import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,31 +15,30 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
-import acme.client.helpers.MomentHelper;
-import acme.constraints.ValidCampaign;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidInvention;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
-import acme.realms.Spokesperson;
+import acme.realms.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidCampaign
-public class Campaign extends AbstractEntity {
-
-	// Serialisation version --------------------------------------------------
+@ValidInvention
+public class Invention extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	@Autowired
+	@Transient
+	private InventionRepository	inventionRepository;
 
 	@Mandatory
 	@ValidTicker
@@ -71,39 +70,26 @@ public class Campaign extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
-	@Transient
-	@Autowired
-	private CampaignRepository	repository;
-
-
-	@Mandatory
-	@Valid
-	@Transient
-	public Double getMonthsActive() {
-		if (this.startMoment == null || this.endMoment == null)
-			return 0.0;
-		return MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
-	}
-
-	@Mandatory
-	@ValidNumber(min = 0.00)
-	@Transient
-	public Double getEffort() {
-		if (this.getId() == 0)
-			return 0.0;
-		Double wrapper = this.repository.sumEffortByCampaignId(this.getId());
-		return wrapper == null ? 0.0 : wrapper;
-	}
-
-
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean			draftMode;
+	private Boolean				draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Spokesperson	spokesperson;
+	private Inventor			inventor;
 
+
+	@Transient
+	public Double getMonthsActive() {
+		Long days = Duration.between(this.startMoment.toInstant(), this.endMoment.toInstant()).toDays();
+		Double months = days / 30.0;
+		return Math.round(months) * 1.0;
+	}
+
+	@Transient
+	public Money getCost() {
+		return this.inventionRepository.sumCostByInventionId(this.getId());
+	}
 }

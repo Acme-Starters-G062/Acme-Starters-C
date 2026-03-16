@@ -1,5 +1,5 @@
 
-package acme.entities.sponsorships;
+package acme.entities.strategy;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -15,70 +15,66 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
-import acme.constraints.ValidSponsorShip;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
-import acme.realms.Sponsor;
+import acme.realms.fundraiser.Fundraiser;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidSponsorShip
-public class Sponsorship extends AbstractEntity {
+public class Strategy extends AbstractEntity {
 
-	// Serialisation version ---------------------------------------------
+	// Serialisation version --------------------------------------------------
 
-	private static final long		serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
-	// Attributes --------------------------------------------------------
+	// Mandatory Attributes -------------------------------------------------------------
 
-	@Autowired
-	@Transient
-	private SponsorshipRepository	sponsorShipRepository;
+	//Atributes
 
 	@Mandatory
 	@ValidTicker
 	@Column(unique = true)
-	private String					ticker;
+	private String				ticker;
 
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String					name;
+	private String				name;
 
 	@Mandatory
 	@ValidText
 	@Column
-	private String					description;
+	private String				description;
 
 	@Mandatory
-	@Temporal(TemporalType.TIMESTAMP)
 	@ValidMoment
-	private Date					startMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				startMoment;
 
 	@Mandatory
-	@Temporal(TemporalType.TIMESTAMP)
 	@ValidMoment
-	private Date					endMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endMoment;
 
 	@Optional
 	@ValidUrl
 	@Column
-	private String					moreInfo;
+	private String				moreInfo;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean					draftMode;
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -88,27 +84,36 @@ public class Sponsorship extends AbstractEntity {
 	@Transient
 	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
-			return 0.0;
-		Double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
-		return Math.round(months) * 1.0;
+			return null;
+
+		double dur = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+
+		return Math.round(dur * 10.0) / 10.0;
 	}
 
-	@Mandatory
-	//@ValidMoney(min = 0.01)
+
 	@Transient
-	public Money getTotalMoney() {
-		Money total = new Money();
-		total.setCurrency("EUR");
-		Double amount = this.sponsorShipRepository.sumMoneyDonation(this.getId());
-		total.setAmount(amount != null ? amount : 0.0);
-		return total;
+	@Autowired
+	private StrategyRepository repository;
+
+
+	@Mandatory
+	@ValidScore
+	@Transient
+	public Double getExpectedPercentaje() {
+		if (this.getId() == 0)
+			return 0.0;
+		Double percentaje = this.repository.sumPercentaje(this.getId());
+		if (percentaje == null)
+			return 0.0;
+		return percentaje;
 	}
 
 	// Relationships ----------------------------------------------------------
 
 
 	@Mandatory
-	@ManyToOne(optional = false)
 	@Valid
-	private Sponsor sponsor;
+	@ManyToOne(optional = false)
+	private Fundraiser fundraiser;
 }

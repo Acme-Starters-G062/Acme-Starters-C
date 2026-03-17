@@ -24,6 +24,10 @@
 		
 		<acme:menu-option code="master.menu.any">		
       		<acme:menu-suboption code="master.menu.any.list-auditReports" action="/any/audit-report/list"/>
+      		<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list"/>
+      		<acme:menu-suboption code="master.menu.any.list-sponsorships" action="/any/sponsorship/list"/>		
+		</acme:menu-option>
+
       		<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list"/>	
 		</acme:menu-option>
 

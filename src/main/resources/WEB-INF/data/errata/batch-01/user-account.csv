@@ -1,4 +1,5 @@
 key,enabled,identity,password,username
-user-account-inventor-01,false,"UserIdentity{name: '', surname: '', email: ''}",,
 user-account-sponsor-1,false,"UserIdentity{name:'' , surname:'' , email:'' }",,
 user-account-spokesperson-01,false,"UserIdentity{name: '', surname: '', email: ''}","",""
+user-account-auditor-01,false,"UserIdentity{name: '', surname: '', email: ''}","",""
+user-account-inventor-01,false,"UserIdentity{name: '', surname: '', email: ''}",,

@@ -1,5 +1,5 @@
 
-package acme.entities.campaigns;
+package acme.entities.strategy;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -18,28 +18,28 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
-import acme.constraints.ValidCampaign;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
-import acme.realms.Spokesperson;
+import acme.realms.fundraiser.Fundraiser;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidCampaign
-public class Campaign extends AbstractEntity {
+public class Strategy extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Mandatory Attributes -------------------------------------------------------------
+
+	//Atributes
 
 	@Mandatory
 	@ValidTicker
@@ -71,9 +71,12 @@ public class Campaign extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
-	@Transient
-	@Autowired
-	private CampaignRepository	repository;
+	@Mandatory
+	@Valid
+	@Column
+	private Boolean				draftMode;
+
+	// Derived attributes -----------------------------------------------------
 
 
 	@Mandatory
@@ -81,30 +84,36 @@ public class Campaign extends AbstractEntity {
 	@Transient
 	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
-			return 0.0;
-		Double result = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
-		return Math.round(result) * 1.0;
+			return null;
+
+		double dur = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+
+		return Math.round(dur * 10.0) / 10.0;
 	}
 
-	@Mandatory
-	@ValidNumber(min = 0.00)
+
 	@Transient
-	public Double getEffort() {
+	@Autowired
+	private StrategyRepository repository;
+
+
+	@Mandatory
+	@ValidScore
+	@Transient
+	public Double getExpectedPercentaje() {
 		if (this.getId() == 0)
 			return 0.0;
-		Double wrapper = this.repository.sumEffortByCampaignId(this.getId());
-		return wrapper == null ? 0.0 : wrapper;
+		Double percentaje = this.repository.sumPercentaje(this.getId());
+		if (percentaje == null)
+			return 0.0;
+		return percentaje;
 	}
 
+	// Relationships ----------------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@Column
-	private Boolean			draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Spokesperson	spokesperson;
-
+	private Fundraiser fundraiser;
 }

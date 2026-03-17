@@ -11,12 +11,7 @@
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.list-campaigns = Ver campañas
-
-# master.menu.authenticated #######################################################
-
-master.menu.authenticated = Autenticado
-master.menu.authenticated.list-campaigns = Ver campañas
+master.menu.anonymous.favourite-link = Enlace favorito
 
 # master.menu.administrator ###################################################
 
@@ -44,8 +39,12 @@ master.menu.user-account.become-provider = Hacerse proveedor
 master.menu.user-account.provider-profile = Perfil de proveedor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
+master.menu.user-account.become-spokesperson = Hazte portavoz
+master.menu.user-account.spokesperson-profile = Perfil de portavoz
 
 # master.menu.any #############################################################
 
 master.menu.any = Cualquiera
 master.menu.any.list-auditReports = Listar informes de auditoria
+master.menu.any.list-campaigns = Listar campañas
+

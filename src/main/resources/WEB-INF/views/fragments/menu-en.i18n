@@ -11,12 +11,7 @@
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.anonymous.list-campaigns = List campaigns
-
-# master.menu.authenticated #######################################################
-
-master.menu.authenticated = Authenticated
-master.menu.authenticated.list-campaigns = List campaigns
+master.menu.anonymous.favourite-link = Favourite link
 
 # master.menu.administrator ###################################################
 
@@ -51,3 +46,4 @@ master.menu.user-account.spokesperson-profile = Spokesperson profile
 
 master.menu.any = Any
 master.menu.any.list-auditReports = List audit reports
+master.menu.any.list-campaigns = List campaigns

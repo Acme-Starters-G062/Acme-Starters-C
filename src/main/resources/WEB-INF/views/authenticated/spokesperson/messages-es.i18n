@@ -1,6 +1,6 @@
-authenticated.spokesperson.form.title = Datos de portavoz
+authenticated.spokesperson.form.title = Detalles de portavoz
 
-authenticated.spokesperson.form.label.cv = Cv: 
+authenticated.spokesperson.form.label.cv = Currículum: 
 authenticated.spokesperson.form.label.achievements = Logros:
 authenticated.spokesperson.form.label.licensed = Licenciado:
 

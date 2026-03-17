@@ -1,6 +1,6 @@
-authenticated.spokesperson.form.title = Spokesperson data
+authenticated.spokesperson.form.title = Spokesperson details
 
-authenticated.spokesperson.form.label.cv = Cv: 
+authenticated.spokesperson.form.label.cv = Curriculum: 
 authenticated.spokesperson.form.label.achievements = Achievements:
 authenticated.spokesperson.form.label.licensed = Licensed:
 

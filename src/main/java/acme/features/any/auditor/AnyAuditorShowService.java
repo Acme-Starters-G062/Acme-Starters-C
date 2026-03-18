@@ -1,5 +1,5 @@
 /*
- * AnyAuditReportShowService.java
+ * AnyAuditorShowService.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,51 +10,44 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.auditReport;
+package acme.features.any.auditor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
-import acme.entities.auditreport.AuditReport;
+import acme.realms.auditor.Auditor;
 
 @Service
-public class AnyAuditReportShowService extends AbstractService<Any, AuditReport> {
+public class AnyAuditorShowService extends AbstractService<Any, Auditor> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyAuditReportRepository	repository;
+	private AnyAuditorRepository	repository;
 
-	private AuditReport					auditReport;
+	private Auditor					auditor;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void load() {
-
 		int id = super.getRequest().getData("id", int.class);
 
-		this.auditReport = this.repository.findOneAuditReportById(id);
+		this.auditor = this.repository.findAuditorById(id);
 	}
 
 	@Override
 	public void authorise() {
+		boolean status = this.auditor != null;
 
-		boolean isPublished = this.auditReport != null && !this.auditReport.getDraftMode();
-
-		super.setAuthorised(isPublished);
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-
-		Tuple tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
-
-		tuple.put("auditorId", this.auditReport.getAuditor().getId());
+		super.unbindObject(this.auditor, "firm", "highlights", "solicitor", "identity.name", "identity.surname", "identity.email");
 	}
-
 }

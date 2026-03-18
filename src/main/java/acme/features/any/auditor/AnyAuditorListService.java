@@ -34,9 +34,8 @@ public class AnyAuditorListService extends AbstractService<Any, Auditor> {
 
 	@Override
 	public void load() {
-		int id;
+		int id = super.getRequest().getData("auditorId", int.class);
 
-		id = super.getRequest().getData("auditorId", int.class);
 		this.auditor = this.repository.findAuditorById(id);
 	}
 

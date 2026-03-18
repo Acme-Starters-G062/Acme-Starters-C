@@ -35,27 +35,23 @@ public class AnyAuditSectionShowService extends AbstractService<Any, AuditSectio
 
 	@Override
 	public void load() {
-		int id;
+		int id = super.getRequest().getData("id", int.class);
 
-		id = super.getRequest().getData("id", int.class);
 		this.auditSection = this.repository.findAuditSectionById(id);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = this.auditSection != null;
+		boolean status = this.auditSection != null;
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
-		tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
-		int auditReportId = this.auditSection.getAuditReport().getId();
-		tuple.put("auditReportId", auditReportId);
+		Tuple tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
+
+		tuple.put("auditReportId", this.auditSection.getAuditReport().getId());
 
 	}
 }

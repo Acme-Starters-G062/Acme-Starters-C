@@ -36,9 +36,8 @@ public class AnyAuditSectionListService extends AbstractService<Any, AuditSectio
 
 	@Override
 	public void load() {
-		int auditSectionId;
+		int auditSectionId = super.getRequest().getData("auditReportId", int.class);
 
-		auditSectionId = super.getRequest().getData("auditReportId", int.class);
 		this.auditSections = this.repository.findAuditSectionsByAuditReport(auditSectionId);
 	}
 

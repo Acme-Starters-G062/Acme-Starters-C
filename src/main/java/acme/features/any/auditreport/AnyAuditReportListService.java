@@ -36,13 +36,11 @@ public class AnyAuditReportListService extends AbstractService<Any, AuditReport>
 
 	@Override
 	public void load() {
-
 		this.auditReport = this.repository.findPublishedAuditReports();
 	}
 
 	@Override
 	public void authorise() {
-
 		super.setAuthorised(true);
 	}
 

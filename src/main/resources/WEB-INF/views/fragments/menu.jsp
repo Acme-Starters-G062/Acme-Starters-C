@@ -28,9 +28,6 @@
       		<acme:menu-suboption code="master.menu.any.list-sponsorships" action="/any/sponsorship/list"/>		
 		</acme:menu-option>
 
-      		<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list"/>	
-		</acme:menu-option>
-
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>

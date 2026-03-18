@@ -1,5 +1,5 @@
 /*
- * AnyAuditReportShowService.java
+ * AnyAuditorShowService.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.auditReport;
+package acme.features.any.auditreport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,6 @@ public class AnyAuditReportShowService extends AbstractService<Any, AuditReport>
 
 	@Override
 	public void load() {
-
 		int id = super.getRequest().getData("id", int.class);
 
 		this.auditReport = this.repository.findOneAuditReportById(id);
@@ -43,7 +42,6 @@ public class AnyAuditReportShowService extends AbstractService<Any, AuditReport>
 
 	@Override
 	public void authorise() {
-
 		boolean isPublished = this.auditReport != null && !this.auditReport.getDraftMode();
 
 		super.setAuthorised(isPublished);
@@ -51,7 +49,6 @@ public class AnyAuditReportShowService extends AbstractService<Any, AuditReport>
 
 	@Override
 	public void unbind() {
-
 		Tuple tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 
 		tuple.put("auditorId", this.auditReport.getAuditor().getId());

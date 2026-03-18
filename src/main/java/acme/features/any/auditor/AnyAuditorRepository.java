@@ -1,5 +1,5 @@
 /*
- * AnyAuditReportRepository.java
+ * AnyAuditorRepository.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,23 +10,18 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.auditReport;
-
-import java.util.Collection;
+package acme.features.any.auditor;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.entities.auditreport.AuditReport;
+import acme.realms.auditor.Auditor;
 
 @Repository
-public interface AnyAuditReportRepository extends AbstractRepository {
+public interface AnyAuditorRepository extends AbstractRepository {
 
-	@Query("SELECT a FROM AuditReport a WHERE a.draftMode = false")
-	Collection<AuditReport> findPublishedAuditReports();
-
-	@Query("SELECT a FROM AuditReport a WHERE a.id = :id")
-	AuditReport findOneAuditReportById(int id);
+	@Query("SELECT a FROM Auditor a WHERE a.id = :id")
+	Auditor findAuditorById(int id);
 
 }

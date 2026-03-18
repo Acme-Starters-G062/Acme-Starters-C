@@ -1,5 +1,5 @@
 /*
- * AnyAuditReportController.java
+ * AnyAuditorController.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.auditReport;
+package acme.features.any.auditor;
 
 import javax.annotation.PostConstruct;
 
@@ -19,10 +19,10 @@ import org.springframework.stereotype.Controller;
 
 import acme.client.components.principals.Any;
 import acme.client.controllers.AbstractController;
-import acme.entities.auditreport.AuditReport;
+import acme.realms.auditor.Auditor;
 
 @Controller
-public class AnyAuditReportController extends AbstractController<Any, AuditReport> {
+public class AnyAuditorController extends AbstractController<Any, Auditor> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,8 +30,8 @@ public class AnyAuditReportController extends AbstractController<Any, AuditRepor
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AnyAuditReportListService.class);
-		super.addBasicCommand("show", AnyAuditReportShowService.class);
+		super.addBasicCommand("list", AnyAuditorListService.class);
+		super.addBasicCommand("show", AnyAuditorShowService.class);
 	}
 
 }

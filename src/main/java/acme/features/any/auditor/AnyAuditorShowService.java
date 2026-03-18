@@ -1,5 +1,5 @@
 /*
- * AnyAuditReportListService.java
+ * AnyAuditorShowService.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,45 +10,44 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.auditReport;
-
-import java.util.Collection;
+package acme.features.any.auditor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
-import acme.entities.auditreport.AuditReport;
+import acme.realms.auditor.Auditor;
 
 @Service
-public class AnyAuditReportListService extends AbstractService<Any, AuditReport> {
+public class AnyAuditorShowService extends AbstractService<Any, Auditor> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyAuditReportRepository	repository;
+	private AnyAuditorRepository	repository;
 
-	private Collection<AuditReport>		auditReport;
+	private Auditor					auditor;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void load() {
+		int id = super.getRequest().getData("id", int.class);
 
-		this.auditReport = this.repository.findPublishedAuditReports();
+		this.auditor = this.repository.findAuditorById(id);
 	}
 
 	@Override
 	public void authorise() {
+		boolean status = this.auditor != null;
 
-		super.setAuthorised(true);
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.auditReport, "ticker", "name", "startMoment", "endMoment", "draftMode");
+		super.unbindObject(this.auditor, "firm", "highlights", "solicitor", "identity.name", "identity.surname", "identity.email");
 	}
-
 }

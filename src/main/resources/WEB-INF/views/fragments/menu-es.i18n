@@ -31,6 +31,11 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.sponsor ########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.list-my-sponsorships = Mis patrocinios
+
 # master.menu.spokesperson ##########################################################
 
 master.menu.spokesperson = Portavoz
@@ -52,7 +57,6 @@ master.menu.user-account.become-sponsor = Hacerse patrocinador
 master.menu.user-account.sponsor-profile = Perfil de patrocinador
 master.menu.user-account.become-inventor = Hacerse inventor
 master.menu.user-account.inventor-profile = Perfil de inventor
-
 
 # master.menu.any #############################################################
 

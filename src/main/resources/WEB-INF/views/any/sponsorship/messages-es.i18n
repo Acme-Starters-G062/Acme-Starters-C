@@ -1,7 +1,7 @@
 any.sponsorship.list.title = Lista de patrocinios
 any.sponsorship.form.title = Detalles de patrocinio
 
-any.sponsorship.list.label.ticker = Ticker
+any.sponsorship.list.label.ticker = Referencia
 any.sponsorship.list.label.name = Nombre
 any.sponsorship.list.label.description = Descripción
 any.sponsorship.list.label.startMoment = Inicio

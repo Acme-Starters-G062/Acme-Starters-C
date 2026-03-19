@@ -16,8 +16,6 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 
 	private Campaign						campaign;
 
-	// AbstractService interface -------------------------------------------
-
 
 	@Override
 	public void load() {
@@ -30,10 +28,7 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 	@Override
 	public void authorise() {
 		boolean status;
-
-		status = this.campaign != null && //
-			(this.campaign.getSpokesperson().isPrincipal() || !this.campaign.getDraftMode());
-
+		status = this.campaign != null && this.campaign.getSpokesperson().isPrincipal();
 		super.setAuthorised(status);
 	}
 

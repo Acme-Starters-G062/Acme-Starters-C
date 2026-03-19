@@ -11,6 +11,6 @@ spokesperson.milestone.form.button.update = Update
 spokesperson.milestone.form.button.delete = Delete
 
 spokesperson.milestone.list.label.title = Title
-spokesperson.milestone.list.label.achievements = Achievements
+spokesperson.milestone.list.label.effort = Effort
 
 spokesperson.milestone.list.button.create = Create

@@ -47,7 +47,7 @@ public class SpokespersonCampaignPublishService extends AbstractService<Spokespe
 		{
 			boolean hasMilestones;
 			hasMilestones = this.repository.findCountMilestonesByCampaignId(this.campaign.getId()) > 0 && this.repository.findCountMilestonesByCampaignId(this.campaign.getId()) != null;
-			super.state(hasMilestones, "*", "acme.validation.campaign.no-miletones.message");
+			super.state(hasMilestones, "*", "acme.validation.campaign.no-milestones.message");
 		}
 		{
 			if (this.campaign.getStartMoment() != null && this.campaign.getEndMoment() != null) {

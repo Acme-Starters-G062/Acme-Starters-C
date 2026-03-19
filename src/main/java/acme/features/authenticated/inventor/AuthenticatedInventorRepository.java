@@ -11,10 +11,10 @@ import acme.realms.Inventor;
 @Repository
 public interface AuthenticatedInventorRepository extends AbstractRepository {
 
-	@Query("select i from Inventor i where i.userAccount.id = :userAccountId")
+	@Query("select ua from UserAccount ua where ua.id=:userAccountId")
 	UserAccount findOneUserAccountById(int userAccountId);
 
-	@Query("select ua from UserAccount ua where ua.id=:userAccountId")
+	@Query("select i from Inventor i where i.userAccount.id = :userAccountId")
 	Inventor findOneInventorByUserAccountId(int userAccountId);
 
 }

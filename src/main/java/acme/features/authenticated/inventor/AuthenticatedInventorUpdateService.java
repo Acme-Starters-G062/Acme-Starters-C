@@ -53,7 +53,7 @@ public class AuthenticatedInventorUpdateService extends AbstractService<Authenti
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.inventor, "cv", "achievements", "licensed");
+		super.unbindObject(this.inventor, "bio", "keyWords", "licensed");
 	}
 
 	@Override

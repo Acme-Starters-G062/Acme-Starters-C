@@ -45,6 +45,9 @@ master.menu.user-account.become-auditor = Become an auditor
 master.menu.user-account.auditor-profile = Auditor profile
 master.menu.user-account.become-sponsor = Become a sponsor
 master.menu.user-account.sponsor-profile = Sponsor profile
+master.menu.user-account.become-inventor = Become a inventor
+master.menu.user-account.inventor-profile = Inventor profile
+
 
 
 # master.menu.any #############################################################

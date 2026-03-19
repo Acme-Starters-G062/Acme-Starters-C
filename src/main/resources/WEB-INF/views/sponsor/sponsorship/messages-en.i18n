@@ -20,7 +20,3 @@ sponsor.sponsorship.list.label.endMoment = End moment
 sponsor.sponsorship.list.label.name = Name
 
 sponsor.sponsorship.list.button.create = Create
-
-sponsor.sponsorship.form.error.end-after-start = The end moment must be after the start moment.
-sponsor.sponsorship.form.error.published-future = It need to be published in future intervals.
-sponsor.sponsorship.form.error.at-least-one-donation = No donations associated to this sponsorship.

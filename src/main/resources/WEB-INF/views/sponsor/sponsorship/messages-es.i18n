@@ -20,7 +20,3 @@ sponsor.sponsorship.list.label.endMoment = Momento de fin
 sponsor.sponsorship.list.label.name = Nombre
 
 sponsor.sponsorship.list.button.create = Crear
-
-sponsor.sponsorship.form.error.end-after-start = El momento de fin debe ser posterior al momento de inicio.
-sponsor.sponsorship.form.error.at-least-one-donation = No hay donaciones asociadas a este patrocinio
-

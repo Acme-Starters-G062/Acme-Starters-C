@@ -38,14 +38,14 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorShip, Sp
 				existingSponsorShip = this.repository.findSponsorShipByTicker(sponsorship.getTicker());
 				uniqueSponsorShip = existingSponsorShip == null || existingSponsorShip.equals(sponsorship);
 
-				super.state(context, uniqueSponsorShip, "ticker", "acme.validation.sponsorShip.duplicated-ticker.message");
+				super.state(context, uniqueSponsorShip, "ticker", "acme.validation.sponsorship.duplicated-ticker.message");
 			}
 			{
 				boolean oneDonationAtLeast;
 
 				oneDonationAtLeast = Boolean.TRUE.equals(sponsorship.getDraftMode()) || this.repository.countDonationsBySponsorShipId(sponsorship.getId()) >= 1;
 
-				super.state(context, oneDonationAtLeast, "*", "acme.validation.sponsorShip.one-donation.message");
+				super.state(context, oneDonationAtLeast, "*", "acme.validation.sponsorship.one-donation.message");
 			}
 			{
 				boolean futureInterval;
@@ -55,7 +55,7 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorShip, Sp
 
 					futureInterval = orderedMoments;
 
-					super.state(context, futureInterval, "*", "acme.validation.sponsorShip.future-interval.message");
+					super.state(context, futureInterval, "*", "acme.validation.sponsorship.future-interval.message");
 				}
 			}
 			{
@@ -63,7 +63,7 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorShip, Sp
 
 				eurCurrency = Boolean.TRUE.equals(sponsorship.getDraftMode()) || this.repository.findDonationsBySponsorShipId(sponsorship.getId()).stream().allMatch(d -> "EUR".equals(d.getMoney().getCurrency()));
 
-				super.state(context, eurCurrency, "*", "acme.validation.sponsorShip.eur-currency.message");
+				super.state(context, eurCurrency, "*", "acme.validation.sponsorship.eur-currency.message");
 			}
 			result = !super.hasErrors(context);
 		}

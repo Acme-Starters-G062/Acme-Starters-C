@@ -19,33 +19,29 @@ public class SponsorDonationCreateService extends AbstractService<Sponsor, Donat
 	private SponsorDonationRepository	repository;
 
 	private Donation					donation;
+	private Sponsorship					sponsorship;
 
 
 	@Override
 	public void load() {
 		int sponsorshipId;
-		Sponsorship sponsorship;
 
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
-		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
+
+		this.sponsorship = this.repository.findSponsorshipById(sponsorshipId);
 
 		this.donation = super.newObject(Donation.class);
 		this.donation.setName("");
 		this.donation.setNotes("");
 		this.donation.setKind(null);
-		this.donation.setSponsorship(sponsorship);
+		this.donation.setSponsorship(this.sponsorship);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int sponsorshipId;
-		Sponsorship sponsorship;
 
-		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
-		sponsorship = this.repository.findSponsorshipById(sponsorshipId);
-
-		status = sponsorship != null && sponsorship.getDraftMode() && sponsorship.getSponsor().isPrincipal();
+		status = this.sponsorship != null && this.sponsorship.getDraftMode() && this.sponsorship.getSponsor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
@@ -57,6 +53,7 @@ public class SponsorDonationCreateService extends AbstractService<Sponsor, Donat
 	@Override
 	public void validate() {
 		super.validateObject(this.donation);
+		super.state(this.donation.getMoney().getCurrency().equals("EUR"), "*", "acme.validation.sponsorship.eur-currency.message");
 	}
 
 	@Override

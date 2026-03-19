@@ -44,7 +44,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 	public void validate() {
 		super.validateObject(this.sponsorship);
 		if (this.sponsorship.getEndMoment() != null && this.sponsorship.getStartMoment() != null)
-			super.state(MomentHelper.isAfter(this.sponsorship.getEndMoment(), this.sponsorship.getStartMoment()), "endMoment", "sponsor.sponsorship.form.error.end-after-start");
+			super.state(MomentHelper.isAfter(this.sponsorship.getEndMoment(), this.sponsorship.getStartMoment()), "endMoment", "acme.validation.sponsorship.end-after-start");
 	}
 
 	@Override

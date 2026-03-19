@@ -1,0 +1,16 @@
+acme.validation.header.message  	= Must have from 1 to 75 characters
+acme.validation.text.message   		= Must have from 1 to 255 characters
+acme.validation.ticker.message			  = The ticker must follow this format ^[A-Z]{2}\\d{2}-\\w{5,10}$
+
+# campaigns
+acme.validation.campaign.duplicated-ticker.message = The ticker is duplicated
+acme.validation.campaign.no-milestones.message = A published campaign must have at least one milestone
+acme.validation.campaign.invalid-date-interval.message = End moment must be after start moment
+acme.validation.campaign.invalid-future-date-interval.message = Start moment/end moment must be a valid time interval in future
+
+# sponsorship
+acme.validation.sponsorship.duplicated-ticker.message = The ticker is duplicated
+acme.validation.sponsorship.end-after-start = The end moment must be after the start moment.
+acme.validation.sponsorship.published-future = It need to be published in future intervals.
+acme.validation.sponsorship.at-least-one-donation = No donations associated to this sponsorship.
+acme.validation.sponsorship.eur-currency.message = Only euros accepted.

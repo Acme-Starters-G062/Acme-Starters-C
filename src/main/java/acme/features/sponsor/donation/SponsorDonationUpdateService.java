@@ -25,6 +25,7 @@ public class SponsorDonationUpdateService extends AbstractService<Sponsor, Donat
 		int id;
 
 		id = super.getRequest().getData("id", int.class);
+
 		this.donation = this.repository.findDonationById(id);
 	}
 
@@ -44,6 +45,7 @@ public class SponsorDonationUpdateService extends AbstractService<Sponsor, Donat
 	@Override
 	public void validate() {
 		super.validateObject(this.donation);
+		super.state(this.donation.getMoney().getCurrency().equals("EUR"), "*", "acme.validation.sponsorship.eur-currency.message");
 	}
 
 	@Override

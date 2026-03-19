@@ -49,12 +49,12 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		hasDonations = !this.repository.findDonationsBySponsorshipId(this.sponsorship.getId()).isEmpty();
 
 		if (this.sponsorship.getEndMoment() != null && this.sponsorship.getStartMoment() != null)
-			super.state(MomentHelper.isAfter(this.sponsorship.getEndMoment(), this.sponsorship.getStartMoment()), "endMoment", "sponsor.sponsorship.form.error.end-after-start");
+			super.state(MomentHelper.isAfter(this.sponsorship.getEndMoment(), this.sponsorship.getStartMoment()), "endMoment", "acme.validation.sponsorship.end-after-start");
 
 		boolean futureInterval = MomentHelper.isFuture(this.sponsorship.getStartMoment());
-		super.state(futureInterval, "*", "sponsor.sponsorship.form.error.published-future");
+		super.state(futureInterval, "*", "acme.validation.sponsorship.published-future");
 
-		super.state(hasDonations, "*", "sponsor.sponsorship.form.error.at-least-one-donation");
+		super.state(hasDonations, "*", "acme.validation.sponsorship.at-least-one-donation");
 	}
 
 	@Override

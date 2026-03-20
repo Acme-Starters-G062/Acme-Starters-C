@@ -14,8 +14,6 @@ acme.validation.sponsorship.end-after-start = El momento de fin debe ser posteri
 acme.validation.sponsorship.at-least-one-donation = No hay donaciones asociadas a este patrocinio
 acme.validation.sponsorship.published-future = Para ser publicado debe estar el intervalo de tiempo en un periodo en el futuro.
 acme.validation.sponsorship.eur-currency.message = Solo se aceptan euros.
-acme.validation.sponsorship.published-future = Para ser publicado debe estar el intervalo de tiempo en un periodo en el futuro
-acme.validation.sponsorship.eur-currency.message = Solo se aceptan euros
 
 # auditReport
 acme.validation.audit-report.ticker.unique.message = Este ticker ya se encuentra registrado en otro informe de auditoría

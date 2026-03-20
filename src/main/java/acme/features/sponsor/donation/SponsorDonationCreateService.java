@@ -53,7 +53,7 @@ public class SponsorDonationCreateService extends AbstractService<Sponsor, Donat
 	@Override
 	public void validate() {
 		super.validateObject(this.donation);
-		super.state(this.donation.getMoney().getCurrency().equals("EUR"), "*", "acme.validation.sponsorship.eur-currency.message");
+		super.state(this.donation.getMoney().getCurrency().equals("EUR"), "money", "acme.validation.sponsorship.eur-currency.message");
 	}
 
 	@Override

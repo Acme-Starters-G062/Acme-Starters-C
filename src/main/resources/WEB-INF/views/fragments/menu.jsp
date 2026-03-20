@@ -22,6 +22,10 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.auditor" access="hasRealm('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.list-my-audit-reports" action="/auditor/audit-report/list"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.any">		
       		<acme:menu-suboption code="master.menu.any.list-auditReports" action="/any/audit-report/list"/>
       		<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list"/>
@@ -45,11 +49,21 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.inventor" access="hasRealm('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.my-inventions" action="/inventor/invention/list"/>
+
+		<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.list-my-sponsorships" action="/sponsor/sponsorship/list"/>
 		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
+			<acme:menu-suboption code="master.menu.spokesperson.my-campaigns" action="/spokesperson/campaign/list"/>
+		</acme:menu-option>
+    
+    <acme:menu-option code="master.menu.inventor" access="hasRealm('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.my-inventions" action="/inventor/invention/list"/>
+    </acme:menu-option>
+
 	</acme:menu-left>
+
 
 	<acme:menu-right>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">

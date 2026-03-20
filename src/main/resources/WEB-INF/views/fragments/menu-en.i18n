@@ -31,6 +31,21 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.auditor #########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-my-audit-reports = My Audit Reports
+
+# master.menu.sponsor ########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-my-sponsorships = My sponsorships
+
+# master.menu.spokesperson ##########################################################
+
+master.menu.spokesperson = Spokesperson
+master.menu.spokesperson.my-campaigns = My campaigns
+
 # master.menu.inventor ########################################################
 
 master.menu.inventor = Inventor
@@ -52,8 +67,6 @@ master.menu.user-account.become-sponsor = Become a sponsor
 master.menu.user-account.sponsor-profile = Sponsor profile
 master.menu.user-account.become-inventor = Become a inventor
 master.menu.user-account.inventor-profile = Inventor profile
-
-
 
 # master.menu.any #############################################################
 

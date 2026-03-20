@@ -1,8 +1,8 @@
 key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:auditor
 #base entity
-audit-report-00,AA00-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,FALSE,auditor-01
+audit-report-00,AA00-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-01
 #ticker
-audit-report-01,AB99-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,FALSE,auditor-01
+audit-report-01,AB99-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-02,ZZ99-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-03,AA03-tiC_kEr,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-04,AA04-_____,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-01
@@ -23,7 +23,7 @@ audit-report-16,AA16-TICKER,L,Lorem ipsum dolor sit amet  consectetur adipiscing
 audit-report-17,AA17-TICKER,L,Lo,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-18,AA18-TICKER,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-19,AA19-TICKER,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
-audit-report-20,AA20-TICKER,L,โลเร็ม อิปซัม,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,auditor-01
+audit-report-20,AA20-TICKER,L,โลเร็ม อิปซัม,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-21,AA21-TICKER,L,لوريم إيبسوم,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-22,AA22-TICKER,L,洛伦·伊普森,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
 audit-report-23,AA23-TICKER,L,<marquee>Hacked</marquee>,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-01
@@ -58,6 +58,6 @@ audit-report-48,AA48-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example
 audit-report-49,AA49-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://example.org/a/b?a&b,TRUE,auditor-01
 audit-report-50,AA50-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,,TRUE,auditor-01
 #draftMode
-audit-report-51,AA51-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-01
+audit-report-51,AA51-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,FALSE,auditor-01
 #auditor
-audit-report-52,AA52-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,FALSE,auditor-02
+audit-report-52,AA52-TICKER,L,L,2026/01/01 00:00,2026/01/02 00:00,http://lorem.com/ipsum,TRUE,auditor-02

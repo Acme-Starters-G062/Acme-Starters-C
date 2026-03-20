@@ -19,7 +19,6 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidInvention;
@@ -92,7 +91,7 @@ public class Invention extends AbstractEntity {
 	}
 
 	@Mandatory
-	@ValidMoney(min = 0.01)
+	//@ValidMoney(min = 0.01)
 	@Transient
 	public Money getCost() {
 		Money res = new Money();

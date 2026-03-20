@@ -1,5 +1,5 @@
-auditor.audit-report.list.title = Mis Estrategias
-auditor.audit-report.form.title = Detalles de la Estrategia
+auditor.audit-report.list.title = Mis Reportes
+auditor.audit-report.form.title = Detalles del reporte de auditoría
 
 auditor.auditReport.list.label.ticker = Código
 auditor.auditReport.list.label.name = Nombre

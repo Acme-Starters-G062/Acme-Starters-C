@@ -1,7 +1,7 @@
 any.invention.form.title =  Detalles de invención
 any.invention.list.title = Listado de invenciones
 
-any.invention.form.label.ticker = Ticker:
+any.invention.form.label.ticker = Referencia:
 any.invention.form.label.name = Nombre:
 any.invention.form.label.description = Descripción:
 any.invention.form.label.startMoment = MomentoInicio:

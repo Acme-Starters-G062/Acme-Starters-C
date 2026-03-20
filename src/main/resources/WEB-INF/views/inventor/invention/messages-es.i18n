@@ -11,7 +11,7 @@ inventor.invention.form.label.monthsActive = MesesActivos:
 inventor.invention.form.label.cost = Coste:
 inventor.invention.form.label.inventor = Inventor:
 
-
+inventor.invention.form.button.part = Partes
 inventor.invention.form.button.inventions = Invenciones
 
 inventor.invention.list.label.ticker = Ticker:

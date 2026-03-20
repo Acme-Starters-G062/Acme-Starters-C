@@ -4,6 +4,7 @@ package acme.features.inventor.part;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.datatypes.Money;
 import acme.client.components.models.Tuple;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
@@ -29,9 +30,14 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 		inventionId = super.getRequest().getData("inventionId", int.class);
 		this.invention = this.repository.findInventionById(inventionId);
 
+		Money newCost = new Money();
+		newCost.setAmount(0.01);
+		newCost.setCurrency("EUR");
+
 		this.part = super.newObject(Part.class);
 		this.part.setName("");
 		this.part.setDescription("");
+		this.part.setCost(newCost);
 		this.part.setKind(null);
 		this.part.setInvention(this.invention);
 	}

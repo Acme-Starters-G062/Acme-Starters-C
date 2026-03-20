@@ -45,7 +45,15 @@ public class InventorPartUpdateService extends AbstractService<Inventor, Part> {
 	@Override
 	public void validate() {
 		super.validateObject(this.part);
+
+		if (this.part.getCost() == null || this.part.getCost().getAmount() == null || this.part.getCost().getCurrency() == null) {
+
+			super.state(false, "cost", "acme.validation.money.required.message");
+			return;
+		}
+
 		super.state(this.part.getCost().getCurrency().equals("EUR"), "*", "acme.validation.invention.eur-currency.message");
+
 	}
 
 	@Override

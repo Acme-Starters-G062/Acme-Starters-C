@@ -14,6 +14,7 @@ inventor.invention.form.label.inventor = Inventor:
 
 
 inventor.invention.form.button.inventions = Inventions
+inventor.invention.form.button.part = Parts
 
 inventor.invention.list.label.ticker = Ticker:
 inventor.invention.list.label.name = Name:

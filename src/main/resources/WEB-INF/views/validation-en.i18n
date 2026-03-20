@@ -14,6 +14,10 @@ acme.validation.sponsorship.end-after-start = The end moment must be after the s
 acme.validation.sponsorship.published-future = It need to be published in future intervals.
 acme.validation.sponsorship.at-least-one-donation = No donations associated to this sponsorship.
 acme.validation.sponsorship.eur-currency.message = Only euros accepted.
+acme.validation.sponsorship.end-after-start = The end moment must be after the start moment
+acme.validation.sponsorship.published-future = It need to be published in future intervals
+acme.validation.sponsorship.at-least-one-donation = No donations associated to this sponsorship
+acme.validation.sponsorship.eur-currency.message = Only euros accepted
 
 # auditReport
 acme.validation.audit-report.ticker.unique.message = This ticker is already assigned to a different audit report
@@ -22,3 +26,11 @@ acme.validation.audit-report.start-before-end.message = Publication requires a l
 acme.validation.auditReport.startMoment.future = The start date cannot be in the past or present
 acme.validation.auditReport.endMoment.future = The completion date must occur after the current time
 acme.validation.audit-report.published-without-audit-section.message = At least one audit section is required to proceed with the publication
+
+# invention
+acme.validation.invention.duplicated-ticker.message = The ticker is duplicated
+acme.validation.invention.invalid-dates.message = The end moment must be after the start moment
+acme.validation.invention.invalid-future-interval.message = It need to be published in future intervals
+acme.validation.invention.no-parts.message = No parts associated to this invention
+acme.validation.invention.eur-currency.message = Only euros accepted
+

@@ -57,6 +57,11 @@
 		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
 			<acme:menu-suboption code="master.menu.spokesperson.my-campaigns" action="/spokesperson/campaign/list"/>
 		</acme:menu-option>
+    
+    <acme:menu-option code="master.menu.inventor" access="hasRealm('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.my-inventions" action="/inventor/invention/list"/>
+    </acme:menu-option>
+
 	</acme:menu-left>
 
 

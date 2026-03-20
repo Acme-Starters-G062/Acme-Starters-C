@@ -11,4 +11,7 @@
 	<acme:list-hidden path="notes"/>
 </acme:list>
 
-<acme:button code="sponsor.donation.list.button.create" action="/sponsor/donation/create?sponsorshipId=${param.sponsorshipId}"/>
+<jstl:if test="${showCreate}">
+	<acme:button code="sponsor.donation.list.button.create" action="/sponsor/donation/create?sponsorshipId=${param.sponsorshipId}"/>
+</jstl:if>
+

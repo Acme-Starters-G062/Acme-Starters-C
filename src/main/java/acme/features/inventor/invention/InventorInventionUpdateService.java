@@ -46,7 +46,7 @@ public class InventorInventionUpdateService extends AbstractService<Inventor, In
 		{
 			if (this.invention.getStartMoment() != null && this.invention.getEndMoment() != null) {
 				boolean correctInterval = MomentHelper.isAfter(this.invention.getEndMoment(), this.invention.getStartMoment());
-				super.state(correctInterval, "*", "acme.validation.invention.invalid-interval.message");
+				super.state(correctInterval, "*", "acme.validation.invention.invalid-dates.message");
 			}
 		}
 	}

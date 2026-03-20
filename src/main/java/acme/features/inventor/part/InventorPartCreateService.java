@@ -20,15 +20,15 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 	private InventorPartRepository	repository;
 
 	private Part					part;
-	private Invention				invention;
 
 
 	@Override
 	public void load() {
 		int inventionId;
+		Invention invention;
 
 		inventionId = super.getRequest().getData("inventionId", int.class);
-		this.invention = this.repository.findInventionById(inventionId);
+		invention = this.repository.findInventionById(inventionId);
 
 		Money newCost = new Money();
 		newCost.setAmount(0.01);
@@ -38,15 +38,17 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 		this.part.setName("");
 		this.part.setDescription("");
 		this.part.setCost(newCost);
-		this.part.setKind(null);
-		this.part.setInvention(this.invention);
+		this.part.setInvention(invention);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-
-		status = this.invention != null && this.invention.getDraftMode() && this.invention.getInventor().isPrincipal();
+		int inventionId;
+		Invention invention;
+		inventionId = super.getRequest().getData("inventionId", int.class);
+		invention = this.repository.findInventionById(inventionId);
+		status = invention != null && this.part.getInvention().getDraftMode() && this.part.getInvention().getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
@@ -58,7 +60,7 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 	@Override
 	public void validate() {
 		super.validateObject(this.part);
-		super.state(this.part.getCost().getCurrency().equals("EUR"), "*", "acme.validation.invention.eur-currency.message");
+		super.state(this.part.getCost().getCurrency().equals("EUR"), "cost", "acme.validation.invention.eur-currency.message");
 	}
 
 	@Override
@@ -74,9 +76,9 @@ public class InventorPartCreateService extends AbstractService<Inventor, Part> {
 		choices = SelectChoices.from(PartKind.class, this.part.getKind());
 
 		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
-		tuple.put("kind", choices.getSelected().getKey());
-		tuple.put("kinds", choices);
 		tuple.put("inventionId", super.getRequest().getData("inventionId", int.class));
 		tuple.put("draftMode", this.part.getInvention().getDraftMode());
+		tuple.put("kinds", choices);
 	}
+
 }

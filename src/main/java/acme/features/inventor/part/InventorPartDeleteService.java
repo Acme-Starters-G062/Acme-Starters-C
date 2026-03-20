@@ -61,7 +61,7 @@ public class InventorPartDeleteService extends AbstractService<Inventor, Part> {
 		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
 		tuple.put("kind", choices.getSelected().getKey());
 		tuple.put("kinds", choices);
-		tuple.put("sponsorshipId", this.part.getInvention().getId());
+		tuple.put("inventionId", this.part.getInvention().getId());
 		tuple.put("draftMode", this.part.getInvention().getDraftMode());
 	}
 

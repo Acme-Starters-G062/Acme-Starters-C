@@ -1,0 +1,10 @@
+acme.validation.header.message  	= Must have from 1 to 75 characters
+acme.validation.text.message   		= Must have from 1 to 255 characters
+acme.validation.ticker.message			  = The ticker must follow this format ^[A-Z]{2}\\d{2}-\\w{5,10}$0
+
+# invention
+acme.validation.invention.duplicated-ticker.message = The ticker is duplicated
+acme.validation.invention.invalid-dates.message = The end moment must be after the start moment
+acme.validation.invention.invalid-future-interval.message = It need to be published in future intervals
+acme.validation.invention.no-parts.message = No parts associated to this invention
+acme.validation.invention.eur-currency.message = Only euros accepted

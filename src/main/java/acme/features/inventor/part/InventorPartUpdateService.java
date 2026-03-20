@@ -52,7 +52,7 @@ public class InventorPartUpdateService extends AbstractService<Inventor, Part> {
 			return;
 		}
 
-		super.state(this.part.getCost().getCurrency().equals("EUR"), "*", "acme.validation.invention.eur-currency.message");
+		super.state(this.part.getCost().getCurrency().equals("EUR"), "cost", "acme.validation.invention.eur-currency.message");
 
 	}
 

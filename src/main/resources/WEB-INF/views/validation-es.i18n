@@ -1,0 +1,10 @@
+acme.validation.header.message  	= Debe tener entre 1 y 75 caracteres
+acme.validation.text.message   		= Debe tener entre 1 y 255 caracteres
+acme.validation.ticker.message			  = La referencia debe seguir este formato ^[A-Z]{2}\\d{2}-\\w{5,10}$
+
+# invention
+acme.validation.invention.duplicated-ticker.message = La referencia está duplicada
+acme.validation.invention.invalid-dates.message = El momento de fin debe ser posterior al momento de inicio
+acme.validation.invention.invalid-future-interval.message = Para ser publicado debe estar el intervalo de tiempo en un periodo en el futuro
+acme.validation.invention.no-parts.message = No hay donaciones asociadas a este patrocinio
+acme.validation.invention.eur-currency.message =  Solo se aceptan euros

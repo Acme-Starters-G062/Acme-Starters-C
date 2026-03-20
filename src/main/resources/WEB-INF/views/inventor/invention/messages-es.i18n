@@ -7,8 +7,6 @@ inventor.invention.form.label.description = Descripción:
 inventor.invention.form.label.startMoment = MomentoInicio:
 inventor.invention.form.label.endMoment = MomentoFin:
 inventor.invention.form.label.moreInfo = Más info: (Optional)
-inventor.invention.form.label.monthsActive = MesesActivos:
-inventor.invention.form.label.cost = Coste:
 inventor.invention.form.label.inventor = Inventor:
 
 inventor.invention.form.button.part = Partes

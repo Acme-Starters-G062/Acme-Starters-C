@@ -14,3 +14,11 @@ acme.validation.sponsorship.end-after-start = The end moment must be after the s
 acme.validation.sponsorship.published-future = It need to be published in future intervals.
 acme.validation.sponsorship.at-least-one-donation = No donations associated to this sponsorship.
 acme.validation.sponsorship.eur-currency.message = Only euros accepted.
+
+# auditReport
+acme.validation.audit-report.ticker.unique.message = This ticker is already assigned to a different audit report
+acme.validation.auditReport.auditSections.error.message = You must add at least one section before this audit report can be published
+acme.validation.audit-report.start-before-end.message = Publication requires a logical time frame where both dates are set in the future
+acme.validation.auditReport.startMoment.future = The start date cannot be in the past or present
+acme.validation.auditReport.endMoment.future = The completion date must occur after the current time
+acme.validation.audit-report.published-without-audit-section.message = At least one audit section is required to proceed with the publication

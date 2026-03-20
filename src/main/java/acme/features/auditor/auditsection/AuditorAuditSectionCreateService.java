@@ -37,11 +37,12 @@ public class AuditorAuditSectionCreateService extends AbstractService<Auditor, A
 	@Override
 	public void authorise() {
 
-		boolean condition1 = this.auditSection.getAuditReport() != null;
-		boolean condition2 = this.auditSection.getAuditReport().getDraftMode();
-		boolean condition3 = this.auditSection.getAuditReport().getAuditor().isPrincipal();
+		boolean condition1 = this.auditSection != null;
+		boolean condition2 = this.auditSection.getAuditReport() != null;
+		boolean condition3 = this.auditSection.getAuditReport().getDraftMode();
+		boolean condition4 = this.auditSection.getAuditReport().getAuditor().isPrincipal();
 
-		boolean status = condition1 && condition2 && condition3;
+		boolean status = condition1 && condition2 && condition3 && condition4;
 
 		super.setAuthorised(status);
 	}
@@ -54,12 +55,6 @@ public class AuditorAuditSectionCreateService extends AbstractService<Auditor, A
 	@Override
 	public void validate() {
 		super.validateObject(this.auditSection);
-		{
-			Integer hr = this.auditSection.getAuditReport().getHours();
-
-			boolean validPercentage = hr + this.auditSection.getHours() <= 1000;
-			super.state(validPercentage, "hours", "acme.validation.AuditSection.sumPercentages");
-		}
 	}
 
 	@Override

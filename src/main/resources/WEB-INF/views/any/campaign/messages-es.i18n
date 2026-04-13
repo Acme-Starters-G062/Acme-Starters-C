@@ -8,6 +8,8 @@ any.campaign.form.label.startMoment = Momento inicio:
 any.campaign.form.label.endMoment = Momento fin:
 any.campaign.form.label.moreInfo = Más información: (Optional)
 any.campaign.form.label.spokesperson = Portavoz:
+any.campaign.form.label.monthsActive = Meses activa:
+any.campaign.form.label.effort = Esfuerzo:
 
 any.campaign.form.button.milestones = Hitos
 any.campaign.form.button.spokesperson = Portavoz

@@ -7,6 +7,8 @@ spokesperson.campaign.form.label.description = Descripción:
 spokesperson.campaign.form.label.startMoment = Momento inicio:
 spokesperson.campaign.form.label.endMoment = Momento fin:
 spokesperson.campaign.form.label.moreInfo = Más información: (Opcional)
+spokesperson.campaign.form.label.monthsActive = Meses activa:
+spokesperson.campaign.form.label.effort = Esfuerzo:
 		
 spokesperson.campaign.form.button.milestones = Hitos
 spokesperson.campaign.form.button.update = Actualizar

@@ -42,7 +42,7 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 				boolean uniqueTicker = existing == null || existing.getId() == auditReport.getId();
 
-				super.state(context, uniqueTicker, "ticker", "acme.validation.audit-report.ticker.unique.message");
+				super.state(context, uniqueTicker, "ticker", "acme.validation.auditReport.ticker.unique.message");
 			}
 
 			{
@@ -50,7 +50,7 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 				publishedWithAuditSection = Boolean.TRUE.equals(auditReport.getDraftMode()) || !this.repository.getAuditSections(auditReport.getId()).isEmpty();
 
-				super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.audit-report.published-without-audit-section.message");
+				super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.auditReport.published-without-audit-section.message");
 			}
 
 			{
@@ -62,7 +62,7 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 					correctInterval = orderedMoments;
 
-					super.state(context, correctInterval, "endMoment", "acme.validation.audit-report.start-before-end.message");
+					super.state(context, correctInterval, "endMoment", "acme.validation.auditReport.start-before-end.message");
 				}
 			}
 			result = !super.hasErrors(context);

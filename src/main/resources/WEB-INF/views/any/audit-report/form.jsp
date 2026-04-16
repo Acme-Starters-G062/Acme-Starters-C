@@ -11,6 +11,8 @@
 	<acme:form-moment code="any.auditReport.form.label.endMoment" path="endMoment"/>
 	<acme:form-url code="any.auditReport.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-url code="any.auditReport.form.label.draftMode" path="draftMode"/>
+	<acme:form-double code="any.auditor.form.label.monthsActive" path="monthsActive" readonly="true"/>
+	<acme:form-double code="any.auditor.form.label.hours" path="hours" readonly="true"/>
 	
 	<acme:button code="any.auditReport.form.button.auditSections" action="/any/audit-section/list?auditReportId=${id}"/>
 	<acme:button code="any.auditReport.form.button.auditor" action="/any/auditor/show?id=${auditorId}"/>

@@ -7,3 +7,5 @@ any.auditor.form.label.solicitor = Abogado:
 any.auditor.form.value.true = Sí
 any.auditor.form.value.false = No
 any.auditor.form.label.email = Correo electrónico:
+any.auditor.form.label.monthsActive = Meses activo:
+any.auditor.form.label.hours = Horas:

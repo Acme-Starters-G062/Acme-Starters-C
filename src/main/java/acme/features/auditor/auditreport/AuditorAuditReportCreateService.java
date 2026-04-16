@@ -23,16 +23,19 @@ public class AuditorAuditReportCreateService extends AbstractService<Auditor, Au
 
 	@Override
 	public void load() {
-		Auditor auditor = (Auditor) super.getRequest().getPrincipal().getActiveRealm();
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		Auditor auditor = this.repository.findAuditorById(auditorId);
 
-		this.auditReport = super.newObject(AuditReport.class);
+		this.auditReport = this.newObject(AuditReport.class);
 		this.auditReport.setDraftMode(true);
 		this.auditReport.setAuditor(auditor);
 	}
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
+
+		super.setAuthorised(status);
 	}
 
 	@Override

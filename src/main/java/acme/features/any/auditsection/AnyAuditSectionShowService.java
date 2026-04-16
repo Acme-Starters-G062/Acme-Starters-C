@@ -42,7 +42,7 @@ public class AnyAuditSectionShowService extends AbstractService<Any, AuditSectio
 
 	@Override
 	public void authorise() {
-		boolean status = this.auditSection != null;
+		boolean status = this.auditSection != null && !this.auditSection.getAuditReport().getDraftMode();
 
 		super.setAuthorised(status);
 	}

@@ -16,13 +16,13 @@ acme.validation.sponsorship.at-least-one-donation = No donations associated to t
 acme.validation.sponsorship.eur-currency.message = Only euros accepted.
 
 # auditReport
-acme.validation.audit-report.ticker.unique.message = This ticker is already assigned to a different audit report
-acme.validation.audit-report.start-before-end.message = Publication requires a logical time frame where both dates are set in the future
-acme.validation.audit-report.published-without-audit-section.message = At least one audit section is required to proceed with the publication
+acme.validation.auditReport.ticker.unique.message = This ticker is already assigned to a different audit report
+acme.validation.auditReport.published-without-audit-section.message = At least one audit section is required to proceed with the publication
 acme.validation.auditReport.auditSections.error.message = You must add at least one section before this audit report can be published
-acme.validation.auditReport.dates.error = The period between the start and end dates must be consistent
-acme.validation.auditReport.startMoment.future = The start date cannot be in the past or present
-acme.validation.auditReport.endMoment.future = The completion date must occur after the current time
+acme.validation.auditReport.startMoment.future = The start date must occur after the current time
+acme.validation.auditReport.endMoment.future = The end date must occur after the current time
+acme.validation.auditReport.dates.error = End date cannot be before or equal to start date
+acme.validation.auditReport.start-before-end.message = The period entered is not valid, the start date must be earlier than the end date and both must be in the future
 
 # invention
 acme.validation.invention.duplicated-ticker.message = The ticker is duplicated

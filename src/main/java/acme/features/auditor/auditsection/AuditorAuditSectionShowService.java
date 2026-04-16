@@ -33,12 +33,11 @@ public class AuditorAuditSectionShowService extends AbstractService<Auditor, Aud
 
 	@Override
 	public void authorise() {
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean condition1 = this.auditSection != null;
-		boolean condition2 = !this.auditSection.getAuditReport().getDraftMode();
-		boolean condition3 = this.auditSection.getAuditReport().getAuditor().isPrincipal();
+		boolean isOwner = this.auditSection != null && this.auditSection.getAuditReport().getAuditor().getId() == auditorId;
 
-		boolean status = condition1 && (condition2 || condition3);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner;
 
 		super.setAuthorised(status);
 	}

@@ -36,13 +36,14 @@ public class AuditorAuditSectionCreateService extends AbstractService<Auditor, A
 
 	@Override
 	public void authorise() {
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean condition1 = this.auditSection != null;
-		boolean condition2 = this.auditSection.getAuditReport() != null;
-		boolean condition3 = this.auditSection.getAuditReport().getDraftMode();
-		boolean condition4 = this.auditSection.getAuditReport().getAuditor().isPrincipal();
+		AuditReport auditReport = this.auditSection == null ? null : this.auditSection.getAuditReport();
 
-		boolean status = condition1 && condition2 && condition3 && condition4;
+		boolean isDraft = auditReport != null && Boolean.TRUE.equals(auditReport.getDraftMode());
+		boolean isOwner = auditReport != null && auditReport.getAuditor().getId() == auditorId;
+
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner && isDraft;
 
 		super.setAuthorised(status);
 	}
@@ -69,6 +70,6 @@ public class AuditorAuditSectionCreateService extends AbstractService<Auditor, A
 		Tuple tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
 		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
 		tuple.put("kinds", choices);
-		tuple.put("auditReportId", super.getRequest().getData("auditReportId", int.class));
+		tuple.put("auditReportId", this.auditSection.getAuditReport().getId());
 	}
 }

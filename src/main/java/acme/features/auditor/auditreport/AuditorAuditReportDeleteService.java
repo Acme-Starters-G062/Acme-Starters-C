@@ -33,23 +33,24 @@ public class AuditorAuditReportDeleteService extends AbstractService<Auditor, Au
 
 	@Override
 	public void authorise() {
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean condition1 = this.auditReport != null;
-		boolean condition2 = this.auditReport.getDraftMode();
-		boolean condition3 = this.auditReport.getAuditor().isPrincipal();
+		boolean isDraft = this.auditReport != null && this.auditReport.getDraftMode();
+		boolean isOwner = this.auditReport != null && this.auditReport.getAuditor().getId() == auditorId;
 
-		boolean status = condition1 && condition2 && condition3;
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner && isDraft;
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void bind() {
-		super.bindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.bindObject(this.auditReport, "id");
 	}
 
 	@Override
 	public void validate() {
+		super.state(this.auditReport != null, "*", "auditor.audit-report.error.not-found");
 	}
 
 	@Override
@@ -62,6 +63,6 @@ public class AuditorAuditReportDeleteService extends AbstractService<Auditor, Au
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "hours");
+		super.getResponse().addGlobal("confirmation", "auditor.audit-report.delete.success");
 	}
 }

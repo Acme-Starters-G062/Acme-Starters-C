@@ -9,9 +9,13 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.auditreport.AuditReport;
 import acme.entities.auditsection.AuditSection;
+import acme.realms.auditor.Auditor;
 
 @Repository
 public interface AuditorAuditReportRepository extends AbstractRepository {
+
+	@Query("SELECT a FROM Auditor a WHERE a.id = :auditorId")
+	Auditor findAuditorById(int auditorId);
 
 	@Query("SELECT a FROM AuditReport a WHERE a.id = :id")
 	AuditReport findAuditReportById(int id);

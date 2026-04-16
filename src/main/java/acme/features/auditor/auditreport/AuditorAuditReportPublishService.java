@@ -36,12 +36,12 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 
 	@Override
 	public void authorise() {
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean condition1 = this.auditReport != null;
-		boolean condition2 = this.auditReport.getDraftMode();
-		boolean condition3 = this.auditReport.getAuditor().isPrincipal();
+		boolean isOwner = this.auditReport != null && this.auditReport.getAuditor().getId() == auditorId;
+		boolean isDraft = this.auditReport != null && this.auditReport.getDraftMode();
 
-		boolean status = condition1 && condition2 && condition3;
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner && isDraft;
 
 		super.setAuthorised(status);
 	}
@@ -87,6 +87,8 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 	public void execute() {
 		this.auditReport.setDraftMode(false);
 		this.repository.save(this.auditReport);
+
+		super.getResponse().setView("redirect:/auditor/audit-report/list");
 	}
 
 	@Override

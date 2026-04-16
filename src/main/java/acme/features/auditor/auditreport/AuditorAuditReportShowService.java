@@ -4,6 +4,7 @@ package acme.features.auditor.auditreport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.auditreport.AuditReport;
 import acme.realms.auditor.Auditor;
@@ -30,19 +31,21 @@ public class AuditorAuditReportShowService extends AbstractService<Auditor, Audi
 
 	@Override
 	public void authorise() {
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean condition1 = this.auditReport != null;
-		boolean condition2 = !this.auditReport.getDraftMode();
-		boolean condition3 = this.auditReport.getAuditor().isPrincipal();
+		boolean isOwner = this.auditReport != null && this.auditReport.getAuditor().getId() == auditorId;
 
-		boolean status = condition1 && (condition2 || condition3);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner;
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "hours");
+		Tuple tuple = super.unbindObject(this.auditReport, "id", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+
+		tuple.put("monthsActive", this.auditReport.getMonthsActive());
+		tuple.put("hours", this.auditReport.getHours());
 	}
 
 }

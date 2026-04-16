@@ -1,5 +1,5 @@
-auditor.audit-section.form.title = Audit Section details
 auditor.audit-section.list.title = Audit Sections
+auditor.audit-section.form.title = Audit Section details
 
 auditor.auditSection.form.label.name  = Name:
 auditor.auditSection.form.label.notes = Notes:

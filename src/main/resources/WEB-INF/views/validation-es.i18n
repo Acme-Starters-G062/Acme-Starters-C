@@ -16,12 +16,13 @@ acme.validation.sponsorship.published-future = Para ser publicado debe estar el 
 acme.validation.sponsorship.eur-currency.message = Solo se aceptan euros.
 
 # auditReport
-acme.validation.audit-report.ticker.unique.message = Este ticker ya se encuentra registrado en otro informe de auditoría
+acme.validation.auditReport.ticker.unique.message = Este ticker ya se encuentra registrado en otro informe de auditoría
+acme.validation.auditReport.published-without-audit-section.message = Es obligatorio añadir al menos una sección de auditoría antes de realizar la publicación
 acme.validation.auditReport.auditSections.error.message = Para que un informe pueda ser publicado, debe contener como mínimo una sección
-acme.validation.audit-report.start-before-end.message = El periodo entre el inicio y el fin debe ser coherente y situarse íntegramente en el futuro
 acme.validation.auditReport.startMoment.future = La fecha de inicio debe ser posterior al momento actual
-acme.validation.auditReport.endMoment.future = La fecha de finalización tiene que estar situada en un momento futuro
-acme.validation.audit-report.published-without-audit-section.message = Es obligatorio añadir al menos una sección de auditoría antes de realizar la publicación
+acme.validation.auditReport.endMoment.future = La fecha de finalización debe ser posterior al momento actual
+acme.validation.auditReport.dates.error = La fecha de finalización no puede ser anterior ni igual a la fecha de inicio
+acme.validation.auditReport.start-before-end.message = El periodo indicado no es válido, la fecha de inicio debe ser anterior a la de fin y ambas deben estar en el futuro
 
 # invention
 acme.validation.invention.duplicated-ticker.message = La referencia está duplicada

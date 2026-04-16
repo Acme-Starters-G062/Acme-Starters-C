@@ -19,7 +19,7 @@ public class AuditorAuditSectionListService extends AbstractService<Auditor, Aud
 	@Autowired
 	private AuditorAuditSectionRepository	repository;
 
-	private AuditReport						auditorReport;
+	private AuditReport						auditReport;
 
 	private Collection<AuditSection>		auditSections;
 
@@ -30,18 +30,18 @@ public class AuditorAuditSectionListService extends AbstractService<Auditor, Aud
 	public void load() {
 		int auditReportId = super.getRequest().getData("auditReportId", int.class);
 
-		this.auditorReport = this.repository.findAuditReportById(auditReportId);
+		this.auditReport = this.repository.findAuditReportById(auditReportId);
 		this.auditSections = this.repository.findAuditSectionsByAuditReportId(auditReportId);
 	}
 
 	@Override
 	public void authorise() {
 
-		boolean condition1 = this.auditorReport != null;
-		boolean condition2 = !this.auditorReport.getDraftMode();
-		boolean condition3 = this.auditorReport.getAuditor().isPrincipal();
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		boolean status = condition1 && (condition2 || condition3);
+		boolean isOwner = this.auditReport != null && this.auditReport.getAuditor().getId() == auditorId;
+
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner;
 
 		super.setAuthorised(status);
 	}
@@ -50,9 +50,9 @@ public class AuditorAuditSectionListService extends AbstractService<Auditor, Aud
 	public void unbind() {
 		super.unbindObjects(this.auditSections, "name", "hours", "kind");
 
-		boolean showCreate = this.auditorReport.getDraftMode() && this.auditorReport.getAuditor().isPrincipal();
+		boolean showCreate = this.auditReport.getDraftMode() && this.auditReport.getAuditor().isPrincipal();
 
-		super.unbindGlobal("auditReportId", this.auditorReport.getId());
+		super.unbindGlobal("auditReportId", this.auditReport.getId());
 		super.unbindGlobal("showCreate", showCreate);
 	}
 

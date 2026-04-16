@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Authenticated;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.realms.auditor.Auditor;
 
@@ -66,6 +67,12 @@ public class AuthenticatedAuditorUpdateService extends AbstractService<Authentic
 
 		super.unbindObject(this.auditor, "firm", "highlights", "solicitor");
 		super.getResponse().addGlobal("solicitorChoices", solicitorChoices);
+	}
+
+	@Override
+	public void onSuccess() {
+		if (super.getRequest().getMethod().equals("POST"))
+			PrincipalHelper.handleUpdate();
 	}
 
 }

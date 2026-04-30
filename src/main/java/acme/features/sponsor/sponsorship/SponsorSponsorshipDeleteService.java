@@ -45,7 +45,6 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void validate() {
-		super.validateObject(this.sponsorship);
 	}
 
 	@Override
@@ -59,7 +58,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.sponsorship, "id", "version", "ticker", "name", "startMoment", "endMoment", "moreInfo", "description", "draftMode");
+		super.unbindObject(this.sponsorship, "id", "version", "ticker", "name", "startMoment", "endMoment", "moreInfo", "description", "draftMode", "monthsActive", "totalMoney");
 	}
 
 }

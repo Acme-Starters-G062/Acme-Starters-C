@@ -10,6 +10,8 @@
 	<acme:form-moment code="sponsor.sponsorship.form.label.endMoment" path="endMoment"/>
 	<acme:form-url code="sponsor.sponsorship.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="sponsor.sponsorship.form.label.description" path="description"/>
+	<acme:form-double code="sponsor.sponsorship.form.label.monthsActive" path="monthsActive" readonly="true"/>
+	<acme:form-money code="sponsor.sponsorship.form.label.totalMoney" path="totalMoney" readonly="true"/>
 
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">

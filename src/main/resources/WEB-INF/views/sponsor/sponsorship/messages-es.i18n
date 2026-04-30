@@ -7,6 +7,8 @@ sponsor.sponsorship.form.label.startMoment = Momento de inicio:
 sponsor.sponsorship.form.label.endMoment = Momento de fin:
 sponsor.sponsorship.form.label.moreInfo = Más información: (Opcional)
 sponsor.sponsorship.form.label.description = Descripción:
+sponsor.sponsorship.form.label.monthsActive = Months active
+sponsor.sponsorship.form.label.totalMoney = Total money
 
 sponsor.sponsorship.form.button.donations = Donaciones
 sponsor.sponsorship.form.button.update = Actualizar

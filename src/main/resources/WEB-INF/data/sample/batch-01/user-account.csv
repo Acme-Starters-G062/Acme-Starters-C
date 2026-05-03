@@ -26,3 +26,7 @@ user-account-spokesperson-03,true,"UserIdentity{name: 'Iker', surname: 'Casillas
 user-account-inventor-01,true,"UserIdentity{name: 'Cristian', surname: 'Inventor', email: 'cristian@acme.com'}",inventor1,inventor1
 user-account-inventor-02,true,"UserIdentity{name: 'Elena', surname: 'โลเร็ม อิปซัม ιπσθμ', email: 'elena@acme.com'}",inventor2,inventor2
 user-account-inventor-03,true,"UserIdentity{name: 'Marta', surname: 'لوريم إيبسوم', email: 'marta@acme.com'}",inventor3,inventor3
+#fundraiser
+user-account-fundraiser-01,true,"UserIdentity{name: 'Alexis', surname: 'Molins', email: 'alexis@acme.com'}",fundraiser1,fundraiser1
+user-account-fundraiser-02,true,"UserIdentity{name: 'Pablo', surname: 'โลเร็ม อิปซัม ιπσθμ', email: 'pablo@acme.com'}",fundraiser2,fundraiser2
+user-account-fundraiser-03,true,"UserIdentity{name: 'Ilaix', surname: 'لوريم إيبسوم', email: 'ilaix@acme.com'}",fundraiser3,fundraiser3

@@ -1,0 +1,18 @@
+fundraiser.tactic.form.title = Tactic details
+fundraiser.tactic.list.title = Tactic list
+
+fundraiser.tactic.form.label.name = Name
+fundraiser.tactic.form.label.notes = Notes
+fundraiser.tactic.form.label.expectedPercentaje = Expected Percentaje
+fundraiser.tactic.form.label.kind = Kind
+
+fundraiser.tactic.form.button.update = Update
+fundraiser.tactic.form.button.delete = Delete
+fundraiser.tactic.form.button.create = Create
+
+fundraiser.tactic.list.label.name = Name
+fundraiser.tactic.list.label.expectedPercentaje = Expected Percentaje
+fundraiser.tactic.list.label.kind = Kind
+
+fundraiser.tactic.list.button.create = Create
+

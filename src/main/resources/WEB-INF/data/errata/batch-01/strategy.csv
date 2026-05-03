@@ -1,0 +1,34 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:fundraiser
+strategy-01,QWE12-abcde,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-02,RTYU34-ZxCvB,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-03,A12-qwerty,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-04,1B23-AsDfG,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-05,ab45-QwErT,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-06,Ab12-ZxCvB,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-07,ZX9-AsDfG,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-08,LM123-Qwert,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-09,PQRS-AsDfG,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-10,GH12-Ab1,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-11,JK34-Qwertyuiopa,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-12,ST01_EJE001,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-13,null,Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-14,"",Estrategia1,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-15,ST02_EJE001,null,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-16,ST03_EJE001,"",Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-17,ST04_EJE001,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-18,ST05_EJE001,ST,null,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-19,ST06_EJE001,St,"",2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-20,ST07_EJE001,St,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-21,ST08_EJE001,St,Esto es una estrategia.,,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-22,ST09_EJE001,St,Esto es una estrategia.,1999/12/31 23:59,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-23,ST10_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2201/01/01 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-24,ST11_EJE001,St,Esto es una estrategia.,2026/03/17 00:00,,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-25,ST12_EJE001,St,Esto es una estrategia.,null,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-26,ST13_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,null,http://lorem.com/ipsum,TRUE,fundraiser1
+strategy-27,ST14_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://,TRUE,fundraiser1
+strategy-28,ST15_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,ftp://,TRUE,fundraiser1
+strategy-29,ST16_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://a,TRUE,fundraiser1
+strategy-30,ST17_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,ftp://a,TRUE,fundraiser1
+strategy-31,ST18_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",TRUE,fundraiser1
+strategy-32,ST19_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,null,fundraiser1
+strategy-33,ST20_EJE001,St,Esto es una estrategia.,2026/03/16 00:00,2026/03/17 00:00,http://lorem.com/ipsum,TRUE,null

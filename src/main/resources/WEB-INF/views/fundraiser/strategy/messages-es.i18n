@@ -1,0 +1,28 @@
+fundraiser.strategy.form.title = Detalles de estrategia
+fundraiser.strategy.list.title = Lista de estrategia
+
+fundraiser.strategy.form.label.ticker = Etiqueta
+fundraiser.strategy.form.label.name = Nombre
+fundraiser.strategy.form.label.description = Descripción
+fundraiser.strategy.form.label.startMoment = Fecha de inicio
+fundraiser.strategy.form.label.endMoment = Fecha de fin
+fundraiser.strategy.form.label.moreInfo = Más información
+fundraiser.strategy.form.label.draftMode = Modo borrador
+fundraiser.strategy.form.label.monthsActive = Meses activo
+fundraiser.strategy.form.label.expectedPercentaje = Porcentaje esperado
+
+fundraiser.strategy.form.button.tactics = Ver tácticas
+fundraiser.strategy.form.button.update = Actualizar
+fundraiser.strategy.form.button.delete = Borrar
+fundraiser.strategy.form.button.publish = Publicar
+fundraiser.strategy.form.button.create = Crear
+
+fundraiser.strategy.list.label.ticker = Etiqueta
+fundraiser.strategy.list.label.name = Nombre
+fundraiser.strategy.list.label.startMoment = Fecha de inicio
+fundraiser.strategy.list.label.endMoment = Fecha de fin
+
+fundraiser.strategy.list.button.create = Crear
+
+acme.validation.strategy.published-without-one-tactic.message = La estrategia debe tener al menos una táctica para poder publicarse
+acme.validation.strategy.start-before-end.message = La fecha de fin debe ser posterior a la fecha de inicio

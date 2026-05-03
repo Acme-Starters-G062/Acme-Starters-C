@@ -1,0 +1,20 @@
+any.strategy.form.title = Detalles de estrategia
+any.strategy.list.title = Lista de estrategia
+
+any.strategy.form.label.ticker = Etiqueta
+any.strategy.form.label.name = Nombre
+any.strategy.form.label.description = Descripción
+any.strategy.form.label.startMoment = Fecha de inicio
+any.strategy.form.label.endMoment = Fecha de fin
+any.strategy.form.label.moreInfo = Más información
+any.strategy.form.label.draftMode = Modo borrador
+any.strategy.form.label.monthsActive = Meses activo
+any.strategy.form.label.expectedPercentaje = Porcentaje esperado
+
+any.strategy.form.button.tactics = Ver tácticas
+any.strategy.form.button.fundraiser = Ver perfil de recaudador
+
+any.strategy.list.label.ticker = Etiqueta
+any.strategy.list.label.name = Nombre
+any.strategy.list.label.startMoment = Fecha de inicio
+any.strategy.list.label.endMoment = Fecha de fin

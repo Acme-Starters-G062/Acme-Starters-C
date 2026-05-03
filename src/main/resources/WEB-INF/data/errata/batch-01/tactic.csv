@@ -1,0 +1,15 @@
+key,name,notes,expectedPercentaje,kind,key:strategy
+tactic-01,null,Notas sobre la táctica,20.5,SUBTLE,strategy-01
+tactic-02,,Notas sobre la táctica,20.5,SUBTLE,strategy-01
+tactic-03,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",Notas sobre la táctica,20.5,SUBTLE,strategy-01
+tactic-04,Táctica 1,null,20.5,SUBTLE,strategy-01
+tactic-05,Táctica 1,,20.5,SUBTLE,strategy-01
+tactic-06,Táctica 1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",20.5,SUBTLE,strategy-01
+tactic-07,Táctica 1,Notas sobre la táctica,,SUBTLE,strategy-01
+tactic-08,Táctica 1,Notas sobre la táctica,null,SUBTLE,strategy-01
+tactic-09,Táctica 1,Notas sobre la táctica,-0.01,SUBTLE,strategy-01
+tactic-10,Táctica 1,Notas sobre la táctica,100.01,SUBTLE,strategy-01
+tactic-11,Táctica 1,Notas sobre la táctica,1.001,SUBTLE,strategy-01
+tactic-12,Táctica 1,Notas sobre la táctica,20.5,"",strategy-01
+tactic-13,Táctica 1,Notas sobre la táctica,20.5,null,strategy-01
+tactic-14,Táctica 1,Notas sobre la táctica,20.5,SUBTLE,

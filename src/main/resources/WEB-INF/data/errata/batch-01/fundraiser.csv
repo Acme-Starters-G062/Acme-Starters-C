@@ -1,0 +1,9 @@
+key,bank,statement,agent,key:userAccount
+fundraiser1,null,Statement1,FALSE,user-account-fundraiser-01
+fundraiser2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",Statement1,FALSE,user-account-fundraiser-01
+fundraiser3,,Statement1,FALSE,user-account-fundraiser-01
+fundraiser4,L,null,FALSE,user-account-fundraiser-01
+fundraiser5,L,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",FALSE,user-account-fundraiser-01
+fundraiser6,L,,FALSE,user-account-fundraiser-01
+fundraiser7,L,St,,user-account-fundraiser-01
+fundraiser8,L,St,FALSE,""

@@ -36,14 +36,19 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			result = true;
 		else {
 			{
-				boolean publishWithOneTactic;
-				publishWithOneTactic = this.repository.getTactics(strategy.getId()).isEmpty();
-				super.state(context, publishWithOneTactic, "*", "acme.validation.strategy.published-without-one-tactic.message");
+				boolean hasTactics = false;
+				if (strategy.getDraftMode() != null)
+					if (!strategy.getDraftMode()) {
+						hasTactics = !this.repository.getTactics(strategy.getId()).isEmpty();
+						super.state(context, hasTactics, "*", "acme.validation.strategy.published-without-one-tactic.message");
+					}
 			}
+
 			{
-				boolean startBeforeEnd;
-				startBeforeEnd = MomentHelper.isBeforeOrEqual(strategy.getStartMoment(), strategy.getEndMoment());
-				super.state(context, startBeforeEnd, "*", "acme.validation.strategy.start-before-end.message");
+				boolean startBeforeEnd = false;
+				if (strategy.getStartMoment() != null && strategy.getEndMoment() != null)
+					startBeforeEnd = MomentHelper.isAfter(strategy.getEndMoment(), strategy.getStartMoment());
+				super.state(context, startBeforeEnd, "endMoment", "acme.validation.strategy.start-before-end.message");
 			}
 			result = !super.hasErrors(context);
 		}

@@ -1,0 +1,29 @@
+key,name,notes,expectedPercentaje,kind,key:strategy
+tactic-01,Táctica 1,Notas sobre la táctica,20.5,SUBTLE,strategy-62
+tactic-02,T,Notas sobre la táctica,10.50,SUBTLE,strategy-62
+tactic-03,Ta,Notas sobre la táctica,0.00,SUBTLE,strategy-62
+tactic-04,Operacion Sombra Firme para control tactico en entorno simulado alfa beta01,Notas sobre la táctica,30.5,SUBTLE,strategy-62
+tactic-05,Operacion Sombra Firme para control tactico en entorno simulado alfa beta1,Notas sobre la táctica,30.5,SUBTLE,strategy-62
+tactic-06,โลเร็ม อิปซัม,Notas sobre la táctica,0.05,SUBTLE,strategy-62
+tactic-07,لوريم إيبسوم,Notas sobre la táctica,0.05,SUBTLE,strategy-61
+tactic-08,洛伦·伊普森,Notas sobre la táctica,0.05,SUBTLE,strategy-61
+tactic-09,<marquee>Hacked</marquee>,Notas sobre la táctica,0.05,SUBTLE,strategy-61
+tactic-10,<script>alert(‘Hacked!’);</script>,Notas sobre la táctica,0.05,SUBTLE,strategy-61
+tactic-11,'' or 'A' = 'A,Notas sobre la táctica,0.05,SUBTLE,strategy-61
+tactic-12,Táctica 1,N,0.05,SUBTLE,strategy-61
+tactic-13,Táctica 1,No,0.05,SUBTLE,strategy-61
+tactic-14,Táctica 1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",0.06,SUBTLE,strategy-61
+tactic-15,Táctica 1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",0.15,SUBTLE,strategy-61
+tactic-16,Táctica 1,โลเร็ม อิปซัม,0.15,SUBTLE,strategy-60
+tactic-17,Táctica 1,لوريم إيبسوم,0.6,SUBTLE,strategy-60
+tactic-18,Táctica 1,洛伦·伊普森,0.05,SUBTLE,strategy-60
+tactic-19,Táctica 1,<marquee>Hacked</marquee>,1,SUBTLE,strategy-60
+tactic-20,Táctica 1,<script>alert(‘Hacked!’);</script>,0.05,SUBTLE,strategy-60
+tactic-21,Táctica 1,'' or 'A' = 'A,0.05,SUBTLE,strategy-60
+tactic-22,Táctica 1,Notas sobre la táctica,0.00,SUBTLE,strategy-62
+tactic-23,Táctica 1,Notas sobre la táctica,0.01,SUBTLE,strategy-62
+tactic-24,Táctica 1,Notas sobre la táctica,99.99,SUBTLE,strategy-59
+tactic-25,Táctica 1,Notas sobre la táctica,100.0,SUBTLE,strategy-58
+tactic-26,Táctica 1,Notas sobre la táctica,0.05,AGGRESSIVE,strategy-57
+tactic-27,Táctica 1,Notas sobre la táctica,0.05,TENDER,strategy-57
+tactic-28,Táctica 1,Notas sobre la táctica,0.05,AGGRESSIVE,strategy-01

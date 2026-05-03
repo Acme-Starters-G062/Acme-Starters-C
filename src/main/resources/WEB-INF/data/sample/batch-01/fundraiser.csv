@@ -1,0 +1,4 @@
+key,bank,statement,agent,key:userAccount
+fundraiser1,Banco1,Statement1,FALSE,user-account-fundraiser-01
+fundraiser2,١مصرف,银行对账单1,FALSE,user-account-fundraiser-02
+fundraiser3,Banco1,Statement1,TRUE,user-account-fundraiser-03

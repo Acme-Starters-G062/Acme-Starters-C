@@ -1,0 +1,39 @@
+key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:auditor
+#ticker
+audit-report-00,AAA0-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-01,A000-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-02,AA00_TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-03,AA00-TICK,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-04,AA00-TICKERRRRRR,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-05,AAAA-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-06,0000-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-07,AB00-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-08,AB00-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-09,AAA00-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-10,"",L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-11,null,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+#name
+audit-report-12,AA00-TICKER,"",L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-13,AA01-TICKER,null,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-14,AA02-TICKER,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+#description
+audit-report-15,AA03-TICKER,L,"",2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-16,AA04-TICKER,L,null,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-17,AA05-TICKER,L,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+#moments
+audit-report-18,AA06-TICKER,L,L,2026/01/01 01:00,2026/01/01 00:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-19,AA07-TICKER,L,L,1999/12/31 23:59,2000/01/01 00:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-20,AA08-TICKER,L,L,2200/12/31 23:59,2201/01/01 00:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-21,AA09-TICKER,L,L,"",2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-22,AA10-TICKER,L,L,null,2026/01/01 01:00,http://lorem.com/ipsum,true,auditor-01
+audit-report-23,AA11-TICKER,L,L,2026/01/01 00:00,"",http://lorem.com/ipsum,true,auditor-01
+audit-report-24,AA12-TICKER,L,L,2026/01/01 00:00,null,http://lorem.com/ipsum,true,auditor-01
+#more-info
+audit-report-25,AA13-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://,true,auditor-01
+audit-report-26,AA14-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,ftp://,true,auditor-01
+audit-report-27,AA15-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://a,true,auditor-01
+audit-report-28,AA16-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,ftp://a,true,auditor-01
+audit-report-29,AA17-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",true,auditor-01
+#draft-mode
+audit-report-30,AA18-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,,auditor-01
+audit-report-31,AA19-TICKER,L,L,2026/01/01 00:00,2026/01/01 01:00,http://lorem.com/ipsum,null,auditor-01

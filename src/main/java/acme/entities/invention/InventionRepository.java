@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import acme.client.components.datatypes.Money;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.part.Part;
 
@@ -15,7 +14,7 @@ import acme.entities.part.Part;
 public interface InventionRepository extends AbstractRepository {
 
 	@Query("select sum(p.cost.amount) from Part p where p.invention.id = :inventionId and p.cost.currency = 'EUR'")
-	Money sumCostByInventionId(@Param("inventionId") Integer inventionId);
+	Double sumCostByInventionId(@Param("inventionId") Integer inventionId);
 
 	Invention findInventionByTicker(String ticker);
 

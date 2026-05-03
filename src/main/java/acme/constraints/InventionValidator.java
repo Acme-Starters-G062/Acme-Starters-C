@@ -46,7 +46,7 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 
 				correctNumPart = Boolean.TRUE.equals(invention.getDraftMode()) || this.repository.sumPartByInventionId(invention.getId()) != null && this.repository.sumPartByInventionId(invention.getId()) > 0;
 
-				super.state(context, correctNumPart, "parts", "acme.validation.invention.min-num-parts.message");
+				super.state(context, correctNumPart, "*", "acme.validation.invention.min-num-parts.message");
 			}
 			{
 				boolean endIsAfterStart;
@@ -54,7 +54,7 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				if (!isDraft && invention.getStartMoment() != null && invention.getEndMoment() != null) {
 					boolean orderedMoments = MomentHelper.isAfter(invention.getEndMoment(), invention.getStartMoment());
 					endIsAfterStart = orderedMoments;
-					super.state(context, endIsAfterStart, "correctDate", "acme.validation.invention.correctDate.message");
+					super.state(context, endIsAfterStart, "*", "acme.validation.invention.correctDate.message");
 				}
 			}
 			{
@@ -62,7 +62,7 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 
 				eurCurrency = this.repository.findPartsByInventionId(invention.getId()).stream().allMatch(p -> "EUR".equals(p.getCost().getCurrency()));
 
-				super.state(context, eurCurrency, "money.currency", "acme.validation.invention.eur-currency.message");
+				super.state(context, eurCurrency, "cost", "acme.validation.invention.eur-currency.message");
 			}
 			result = !super.hasErrors(context);
 		}

@@ -24,8 +24,8 @@ audit-section-18,L,<marquee>Hacked</marquee>,3,PRELIMINARY,audit-report-00
 audit-section-19,L,<script>alert(‘Hacked!’);</script>,3,PRELIMINARY,audit-report-00
 audit-section-20,L,' or 'A' = 'A,3,PRELIMINARY,audit-report-00
 #hours
-audit-section-21,L,L,0,PRELIMINARY,audit-report-00
-audit-section-22,L,L,1,PRELIMINARY,audit-report-00
+audit-section-21,L,L,1,PRELIMINARY,audit-report-00
+audit-section-22,L,L,2,PRELIMINARY,audit-report-00
 audit-section-23,L,L,99,PRELIMINARY,audit-report-00
 audit-section-24,L,L,100,PRELIMINARY,audit-report-00
 #kind

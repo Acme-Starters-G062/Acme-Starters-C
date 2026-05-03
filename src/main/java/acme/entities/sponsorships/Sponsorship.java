@@ -43,7 +43,7 @@ public class Sponsorship extends AbstractEntity {
 
 	@Autowired
 	@Transient
-	private SponsorshipRepository	sponsorShipRepository;
+	private SponsorshipRepository	sponsorshipRepository;
 
 	@Mandatory
 	@ValidTicker
@@ -94,12 +94,12 @@ public class Sponsorship extends AbstractEntity {
 	}
 
 	@Mandatory
-	//@ValidMoney(min = 0.01)
+	//@ValidMoney(min = 0.00)
 	@Transient
 	public Money getTotalMoney() {
 		Money total = new Money();
 		total.setCurrency("EUR");
-		Double amount = this.sponsorShipRepository.sumMoneyDonation(this.getId());
+		Double amount = this.sponsorshipRepository.sumMoneyDonation(this.getId());
 		total.setAmount(amount != null ? amount : 0.0);
 		return total;
 	}

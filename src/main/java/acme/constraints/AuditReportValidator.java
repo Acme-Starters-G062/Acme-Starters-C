@@ -42,25 +42,29 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 				boolean uniqueTicker = existing == null || existing.getId() == auditReport.getId();
 
-				super.state(context, uniqueTicker, "ticker", "acme.validation.audit-report.ticker.unique.message");
+				super.state(context, uniqueTicker, "ticker", "acme.validation.auditReport.ticker.unique.message");
 			}
 
 			{
 				boolean publishedWithAuditSection;
 
-				publishedWithAuditSection = auditReport.getDraftMode() || !this.repository.getAuditSections(auditReport.getId()).isEmpty();
+				publishedWithAuditSection = Boolean.TRUE.equals(auditReport.getDraftMode()) || !this.repository.getAuditSections(auditReport.getId()).isEmpty();
 
-				super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.audit-report.published-without-audit-section.message");
+				super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.auditReport.published-without-audit-section.message");
 			}
 
 			{
-				boolean startBeforeEnd;
+				boolean correctInterval;
 
-				startBeforeEnd = MomentHelper.isBeforeOrEqual(auditReport.getStartMoment(), auditReport.getEndMoment());
+				boolean isDraft = Boolean.TRUE.equals(auditReport.getDraftMode());
+				if (!isDraft && auditReport.getStartMoment() != null && auditReport.getEndMoment() != null) {
+					boolean orderedMoments = MomentHelper.isAfter(auditReport.getEndMoment(), auditReport.getStartMoment());
 
-				super.state(context, startBeforeEnd, "endMoment", "acme.validation.audit-report.start-before-end.message");
+					correctInterval = orderedMoments;
+
+					super.state(context, correctInterval, "endMoment", "acme.validation.auditReport.start-before-end.message");
+				}
 			}
-
 			result = !super.hasErrors(context);
 		}
 

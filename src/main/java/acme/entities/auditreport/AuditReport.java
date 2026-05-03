@@ -87,7 +87,7 @@ public class AuditReport extends AbstractEntity {
 	public Double getMonthsActive() {
 
 		if (this.startMoment == null || this.endMoment == null)
-			return null;
+			return 0.0;
 
 		double dur = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 

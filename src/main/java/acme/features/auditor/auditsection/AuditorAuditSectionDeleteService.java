@@ -1,0 +1,71 @@
+
+package acme.features.auditor.auditsection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
+import acme.client.services.AbstractService;
+import acme.entities.auditsection.AuditSection;
+import acme.entities.auditsection.SectionKind;
+import acme.realms.auditor.Auditor;
+
+@Service
+public class AuditorAuditSectionDeleteService extends AbstractService<Auditor, AuditSection> {
+
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	private AuditorAuditSectionRepository	repository;
+
+	private AuditSection					auditSection;
+
+	// AbstractService interface -------------------------------------------
+
+
+	@Override
+	public void load() {
+		int id = super.getRequest().getData("id", int.class);
+
+		this.auditSection = this.repository.findAuditSectionById(id);
+	}
+
+	@Override
+	public void authorise() {
+		int auditorId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
+		boolean isOwner = this.auditSection != null && this.auditSection.getAuditReport().getAuditor().getId() == auditorId;
+		boolean isDraft = this.auditSection != null && Boolean.TRUE.equals(this.auditSection.getAuditReport().getDraftMode());
+
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class) && isOwner && isDraft;
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.auditSection, "name", "notes", "hours", "kind");
+	}
+
+	@Override
+	public void validate() {
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.auditSection);
+
+		super.getResponse().setView("redirect:/auditor/audit-section/list?auditReportId=" + this.auditSection.getAuditReport().getId());
+	}
+
+	@Override
+	public void unbind() {
+		SelectChoices choices = SelectChoices.from(SectionKind.class, this.auditSection.getKind());
+
+		Tuple tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind");
+		tuple.put("auditReportId", this.auditSection.getAuditReport().getId());
+		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
+		tuple.put("kinds", choices);
+	}
+}

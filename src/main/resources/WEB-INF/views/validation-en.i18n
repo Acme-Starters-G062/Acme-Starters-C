@@ -1,0 +1,32 @@
+acme.validation.header.message  	= Must have from 1 to 75 characters
+acme.validation.text.message   		= Must have from 1 to 255 characters
+acme.validation.ticker.message			  = The ticker must follow this format ^[A-Z]{2}\\d{2}-\\w{5,10}$
+
+# campaigns
+acme.validation.campaign.duplicated-ticker.message = The ticker is duplicated
+acme.validation.campaign.no-milestones.message = A published campaign must have at least one milestone
+acme.validation.campaign.invalid-date-interval.message = End moment must be after start moment
+acme.validation.campaign.invalid-future-date-interval.message = Start moment/end moment must be a valid time interval in future
+
+# sponsorship
+acme.validation.sponsorship.duplicated-ticker.message = The ticker is duplicated
+acme.validation.sponsorship.end-after-start = The end moment must be after the start moment.
+acme.validation.sponsorship.published-future = It need to be published in future intervals.
+acme.validation.sponsorship.at-least-one-donation = No donations associated to this sponsorship.
+acme.validation.sponsorship.eur-currency.message = Only euros accepted.
+
+# auditReport
+acme.validation.auditReport.ticker.unique.message = This ticker is already assigned to a different audit report
+acme.validation.auditReport.published-without-audit-section.message = At least one audit section is required to proceed with the publication
+acme.validation.auditReport.auditSections.error.message = You must add at least one section before this audit report can be published
+acme.validation.auditReport.startMoment.future = The start date must occur after the current time
+acme.validation.auditReport.endMoment.future = The end date must occur after the current time
+acme.validation.auditReport.dates.error = End date cannot be before or equal to start date
+acme.validation.auditReport.start-before-end.message = The period entered is not valid, the start date must be earlier than the end date and both must be in the future
+
+# invention
+acme.validation.invention.duplicated-ticker.message = The ticker is duplicated
+acme.validation.invention.invalid-dates.message = The end moment must be after the start moment
+acme.validation.invention.invalid-future-interval.message = It need to be published in future intervals
+acme.validation.invention.no-parts.message = No parts associated to this invention
+acme.validation.invention.eur-currency.message = Only euros accepted

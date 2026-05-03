@@ -1,0 +1,8 @@
+authenticated.spokesperson.form.title = Spokesperson details
+
+authenticated.spokesperson.form.label.cv = Curriculum: 
+authenticated.spokesperson.form.label.achievements = Achievements:
+authenticated.spokesperson.form.label.licensed = Licensed:
+
+authenticated.spokesperson.form.button.create = Register
+authenticated.spokesperson.form.button.update = Update

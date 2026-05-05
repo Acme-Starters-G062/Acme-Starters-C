@@ -8,7 +8,7 @@ inventor.invention.form.label.description = Description:
 inventor.invention.form.label.startMoment = StartMoment:
 inventor.invention.form.label.endMoment = EndMoment:
 inventor.invention.form.label.moreInfo = More info: (Optional)
-inventor.invention.form.label.monthsActive = MonthsActive:
+inventor.invention.form.label.monthsActive = Months active:
 inventor.invention.form.label.cost = Cost:
 inventor.invention.form.label.inventor = Inventor:
 

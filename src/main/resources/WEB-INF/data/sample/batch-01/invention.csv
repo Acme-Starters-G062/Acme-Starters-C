@@ -5,7 +5,7 @@ invention-00,AA00-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adip
 invention-01,AB99-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
 invention-02,ZZ99-TICKER,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
 invention-03,AA03-tiC_kEr,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
-invention-04,AA04-_____,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
+invention-04,AA04-12345,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
 invention-05,AA05-__________,invention,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
 # name - standard variations
 invention-06,AA06-TICKER,L,"Lorem ipsum dolor sit amet, consectetur adipiscing",2025/09/01 10:00,2025/11/14 10:00,http://lorem.com/ipsum,TRUE,inventor-01
